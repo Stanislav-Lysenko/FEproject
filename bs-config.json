@@ -1,0 +1,5 @@
+{
+  "port": 3013,
+  "files": ["./build/**/*.{html,htm,css,js,json,jpg,png}"],
+  "server": { "baseDir": "./build/" }
+}

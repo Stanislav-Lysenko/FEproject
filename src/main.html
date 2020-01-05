@@ -1,0 +1,74 @@
+<main>
+	<aside>
+		<form class="filter-form" method="GET" action="">
+			<ul class="filter__list">
+				<li class="filter__option">
+					<button class="filter__btn-accordion"><span class="filter__name">Condition</span></button>
+					<label class="checkbox"><input class="checkbox__input" type="checkbox" name="condition1" value="new"><div class="checkbox__text">New</div></label class="checkbox">
+					<label class="checkbox"><input class="checkbox__input" type="checkbox" name="condition2" value="used"><div class="checkbox__text">Used</div></label>
+					<label class="checkbox"><input class="checkbox__input" type="checkbox" name="condition3" value="any"><div class="checkbox__text">Any condition</div></label>
+				</li>
+				<li>
+					<button class="filter__btn-accordion"><span class="filter__name">Delivery Options</span></button>
+					<label class="checkbox"><input class="checkbox__input" type="checkbox" name="delivery1" value="free"><div class="checkbox__text"></div></label>Free Shipping
+					<label class="checkbox"><input class="checkbox__input" type="checkbox" name="delivery2" value="freeinstore"><div class="checkbox__text">Free In-store Pickup</div></label>
+					<label class="checkbox"><input class="checkbox__input" type="checkbox" name="delivery3" value="freelocal"><div class="checkbox__text">Free Local Pickup</div></label>
+				</li>
+				<li>
+					<button class="filter__btn-accordion"><span class="filter__name">Price</span></button>
+					<label>$</label><input pattern="\d*" size="3" maxlength="6" type="text" name="from" autocomplete="off">
+					<label>-$</label><input pattern="\d*" size="3" maxlength="6" type="text" name="to" autocomplete="off">
+					<button>-></button>
+				</li>
+				<li>
+					<button class="filter__btn-accordion"><span class="filter__name">Buying Format</span></button>
+					<label class="checkbox"><input class="checkbox__input" type="radio" name="format" value="now"><div class="checkbox__text">Buy it now</div></label>
+					<label class="checkbox"><input class="checkbox__input" type="radio" name="format" value="auction"><div class="checkbox__text">Auction</div></label>
+				</li>
+			</ul>
+		</form>
+	</aside>
+	<section>
+		<div class="offer_filter">
+			<ul>
+				<li><a href="">Buy it now</a></li>
+				<li><a href="">Auction</a></li>
+				<li><a href="">Condition</a>
+					<ul>
+						<li><a href="">Any condition</a></li>
+						<li><a href="">New</a></li>
+						<li><a href="">Used</a></li>
+					</ul>
+				</li>
+				<li>
+					<select>
+						<option value="low_price">Price: lower first</option>
+						<option value="high_price">Price: highest first</option>
+					</select>
+				</li>
+			</ul>
+		</div>
+	</section>
+	<section>
+		<div class="result-container">
+			<div class="item">
+				<div class="item__container">
+					<div class="item__img-container">
+						<img class="item__img-preview" src="">
+					</div>
+				</div>
+				<div class="item__info">
+					<h3 class="item__title"></h3>
+					<div class="item__subtitle">
+						<span class="item__condition"></span>
+					</div>
+					<div class="item__details">
+						<span class="item__price"></span>
+						<span class="item__bids"></span>
+						<span class="item__date-expiration"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</main>

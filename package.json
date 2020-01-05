@@ -1,0 +1,27 @@
+{
+  "name": "auction",
+  "version": "1.0.0",
+  "description": "front-end auction",
+  "main": "index.js",
+  "scripts": {
+    "dev:server": "npx lite-server",
+    "dev:build": "cross-env DEV=true npx gulp"
+  },
+  "author": "Lysenko Stanislav",
+  "license": "ISC",
+  "dependencies": {
+    "cross-env": "^6.0.3",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean": "^0.4.0",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-if": "^3.0.0",
+    "gulp-imagemin": "^6.2.0",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "lite-server": "^2.5.4",
+    "process": "^0.11.10"
+  }
+}
