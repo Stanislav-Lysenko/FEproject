@@ -1,0 +1,15 @@
+.sort {
+	height: 1.8em;
+	width: 12em;
+	font-size: 1.4em;
+	letter-spacing: 0.1em;
+	outline: none;
+	border: 1px solid $bg-second-color;;
+}
+
+// ie
+// .sort::-ms-expand {
+// 	padding: 2em;
+//     color: red;
+//     background: black;
+// }

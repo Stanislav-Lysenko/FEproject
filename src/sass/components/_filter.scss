@@ -1,0 +1,13 @@
+.filter__option {
+	padding: 1em;
+	display: flex;
+	flex-direction: column;
+}
+
+.filter__name {
+	font-size: 1.6em;
+	padding: 1.6em 0;
+	color: $link-text-color;
+}
+
+

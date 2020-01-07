@@ -1,0 +1,20 @@
+.result{
+	flex: 0 0 80%;
+	border: 1px solid $bg-second-color;
+	border-radius: 5px;
+}
+
+.result__sort {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	padding: 0 2em;
+	height: 4em;
+	border-bottom: 1px solid $bg-second-color;;
+}
+
+.result__container {
+	position: relative;
+	font-size: 1.6em;
+	padding: 0 0.5em;
+}

@@ -1,0 +1,27 @@
+.price__container {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.price__currency {
+	font-size: 1.6em;
+}
+
+.price__input {
+	height: 1.429em;
+	display: inline-block;
+	width: 25%;
+	font-size: 1.4em;
+}
+
+.price__btn {
+	height: 2em;
+	padding: 0 1em;
+	color: $btn-text-color;
+	background-color: $link-text-color;
+	border: 1px solid $link-subtext-color;
+
+}
+
+

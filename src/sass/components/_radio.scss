@@ -1,0 +1,42 @@
+.radio {
+	padding: 0.5em 0;
+}
+
+.radio__input {
+	display: none;
+}
+
+.radio__text {
+	position: relative;
+	padding: 0 0 0 1.6em;
+	font-size: 1.6em;
+	cursor: pointer;
+}
+
+.radio__text::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1em;
+	height: 1em;
+	border-radius: 50%;;
+	border: 1px solid $main-text-color;
+	transition: 0.2s;
+}
+
+.radio__input:checked + .radio__text::before {
+	border: 1px solid $link-text-color;
+}
+
+.radio__input:checked + .radio__text::after {
+	content: '';
+	position: absolute;
+	top: 0.14em;
+	left: 0.16em;
+	width: 0.7em;
+	height: 0.7em;
+	border-radius: 50%;;
+	background-color: $link-text-color;
+	transition: 0.2s;
+}

@@ -1,0 +1,38 @@
+.checkbox {
+	padding: 0.5em 0;
+}
+.checkbox__input {
+	display: none;
+}
+
+.checkbox__text {
+	position: relative;
+	padding: 0 0 0 1.6em;
+	font-size: 1.6em;
+	cursor: pointer;
+}
+
+.checkbox__text::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1em;
+	height: 1em;
+	border: 1px solid $main-text-color;
+	transition: 0.2s;
+}
+
+.checkbox__input:checked + .checkbox__text::before {
+	background-color: $link-text-color;
+}
+
+.checkbox__input:checked + .checkbox__text::after {
+	content: '\2714';
+	position: absolute;
+	top: -0.05em;
+	left: 0.15em;
+	font-size: 1em;
+	color: $main-text-color;
+	transition: 0.2s;
+}
