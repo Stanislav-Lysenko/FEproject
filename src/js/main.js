@@ -9,3 +9,4 @@
  * Custom
  */
 //= app/fetch.js
+//= app/renderFromJson.js

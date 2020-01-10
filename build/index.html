@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
 	<title>letit.buy1</title>
+	<link rel="shortcut icon" href="img/favicon.png" type="image/png">
 	<link rel="stylesheet" href="css/style.css">
 	<script src="js/main.js" defer></script>
 </head>
@@ -15,17 +16,46 @@
 					<img class="item__img-preview" src="{{=previmg_path}}">
 				</div>
 				<div class="item__info">
-					<h3 class="item__title">{{=title}}</h3>
+					<h3 class="item__title"><a class="item__link" href="">{{=title}}</a></h3>
 					<div class="item__subtitle">
 						<span class="item__condition">{{=condition}}</span>
 						{{=subtitle}}
 					</div>
 					<div class="item__details">
-						<span class="item__price">{{=price}}</span>
+						<p class="item__price">{{=price}}</p>
 						{{ if (auction) { }}
-						<span class="item__bids">{{=bids}}</span>
+						<p class="item__bids">{{=bids}}</p>
 						{{ } }}
-						<span class="item__date-expiration">{{=date_exp}}</span>
+						<p class="item__date-expiration">{{=date_exp}}</p>
+						<p class="item__country">{{=country}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</template>
+	<template id="item-page">
+		<div class="item-page">
+			<div class="item-page__container">
+				<div class="item-page__gallery">
+					<div class="item__img-container">
+						<img class="item__img-preview" src="{{=previmg_path}}">
+					</div>
+				</div>
+				<div class="item-page__content">
+					<h3 class="item-page__title"></h3>
+						<p class="item-page__condition">Condition<span class="item__condition-value">{{=condition}}</span></p>
+					<div class="item-page__details">
+						{{ if (auction) { }}
+						<p class="item-page__start-bid-value"><span class="item-page__start-bid">Starting bids</span>{{=price}}</p>
+						<div><inpit type="text" size="11" maxlenght="10" autocoplete="off" name="maxbid"></inpit>
+							<button class="item-page__btn-bid btn">Place bid</button>
+						</div>
+						<p class="item-page_bids-value">{{=bids}}<span class="item-page_bids">bids</span></p>
+						{{ } }}
+						{{ if (buy) { }}
+						<p class="item-page__price">{{=price}}</p>
+						<button class="item-page-buy">Buy it now</button>
+						{{ } }}
 					</div>
 				</div>
 			</div>
@@ -52,7 +82,7 @@
 								<li class="nav__item nav__item_sub"><a class="nav__link" href="">Summary</a></li>
 							</ul>
 						</li>
-						<li class="nav__item"><a href="" class="nav__link">cart</a></li>
+						<li class="nav__item"><a href="" class="nav__link">Cart</a></li>
 					</ul>
 				</nav>
 				<div class="header__head">
@@ -70,11 +100,11 @@
 		</header>
 		<main class="main">
 			<div class="main__container">
-				<aside class="aside">
+
+				<!-- <aside class="aside">
 					<form class="filter" method="GET" action="">
 						<ul class="filter__list">
 							<li class="filter__option">
-								<!-- <button class="filter__btn-accordion"><span class="filter__name">Condition</span></button> -->
 								<div class="filter__name">Condition</div>
 								<label class="checkbox">
 									<input class="checkbox__input" type="checkbox" name="condition1" value="new">
@@ -90,7 +120,6 @@
 								</label>
 							</li>
 							<li class="filter__option">
-								<!-- <button class="filter__btn-accordion"><span class="filter__name">Delivery Options</span></button> -->
 								<div class="filter__name">Delivery Options</div>
 								<label class="checkbox">
 									<input class="checkbox__input" type="checkbox" name="delivery1" value="free">
@@ -106,7 +135,6 @@
 								</label>
 							</li>
 							<li class="filter__option">
-								<!-- <button class="filter__btn-accordion"><span class="filter__name">Price</span></button> -->
 								<div class="filter__name">Price</div>
 								<div class="price__container">
 									<span class="price__currency">$</span><input class="price__input" pattern="\d*" size="3" maxlength="6" type="text" name="from" autocomplete="off">
@@ -115,7 +143,6 @@
 								</div>
 							</li>
 							<li class="filter__option">
-								<!-- <button class="filter__btn-accordion"><span class="filter__name">Buying Format</span></button> -->
 								<div class="filter__name">Buying Format</div>
 								<label class="radio">
 									<input class="radio__input" type="radio" name="format" value="now">
@@ -138,16 +165,20 @@
 					</div>
 					<div class="result__container">
 					</div>
-				</section>
+				</section> -->
 			</div>
 		</main>
 		<footer>
-			<ul>
-				<li><a href="">Registration</a></li>
-				<li><a href="">Rules</a></li>
-				<li><a href="">Contact us</a></li>
-				<li><a href="">Facebook</a></li>
-			</ul>
+			<div class="footer__bg">
+				<div class="footer__container">
+						<ul class="footer__list">
+							<li class="footer__item"><a class="footer__link" href="">Registration</a></li>
+							<li class="footer__item"><a class="footer__link" href="">Rules</a></li>
+							<li class="footer__item"><a class="footer__link" href="">Contact us</a></li>
+							<li class="footer__item"><a class="footer__link" href="">Facebook</a></li>
+						</ul>
+				</div>
+			</div>
 		</footer>
 	</body>
 	</html>

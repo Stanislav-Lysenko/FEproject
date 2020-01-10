@@ -4,6 +4,7 @@
 
 .item__container {
 	display: flex;
+	justify-content: space-between;
 	flex-wrap: nowrap;
 	padding: 0.7em 0;
 }
@@ -22,4 +23,31 @@
 
 .item__info {
 	flex: 0 0 70%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.item__price::after {
+	content: "$";
+	padding-left: 0.2em;
+}
+
+.item__bids::after {
+	content: "bids";
+	padding-left: 0.2em;
+}
+
+.item__link {
+	color: $link-text-color;
+}
+
+.item__details {
+	color: $link-subtext-color;
+}
+
+.item__price {
+	color: $main-text-color;
+	font-size: 1.4em;
+	padding-bottom: 1em;
 }

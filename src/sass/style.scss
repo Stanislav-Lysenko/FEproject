@@ -13,11 +13,15 @@
 @import 'layout/main';
 @import 'layout/aside';
 @import 'layout/result';
+@import 'layout/contacts';
+@import 'layout/footer';
+
 
 //components
 @import 'components/nav';
 @import 'components/logo';
 @import 'components/search';
+@import 'components/btn';
 @import 'components/sort';
 @import 'components/filter';
 @import 'components/checkbox';

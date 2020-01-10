@@ -1,0 +1,18 @@
+.btn {
+	background-color: $link-text-color;
+	padding: 0 0.5em;
+	outline: 0;
+	border: 0;
+	color: $btn-text-color;
+	font-size: 1.6em;
+	letter-spacing: 0.2em;
+	cursor: pointer;
+	&_small {
+		height: 2em;
+		width: 6em;
+	}
+	&_big {
+		height: 4em;
+		width: 9em;
+	}
+}

@@ -1,0 +1,16 @@
+[
+{"tag":"div","class":"contacts","children":[
+	{"tag":"div","class":"contacts-col","children":[
+			[
+				{"tag":"input","class":"contacts__input","type":"text","placeholder":"First name","required":"","html":""},
+				{"tag":"input","class":"contacts__input","type":"email","placeholder":"Your mail","required":"","html":""},
+				{"tag":"input","class":"contacts__input","type":"text","placeholder":" Subject","required":"","html":""},
+				{"tag":"textarea","class":"contacts__textarea","rows":"10","cols":"45","name":"text","placeholder":"Your text","html":""},
+				{"tag":"button","class":"contacts__btn btn btn_small","type":"submit","html":"Send"}
+			]
+		]},
+	{"tag":"div","class":"contacts-col","children":[
+			{"tag":"iframe","class":"contacts__map","src":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3173.9925611057733!2d-121.93096248473799!3d37.2953101298496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3bfbf6a8e393cd1d!2seBay%20Inc!5e0!3m2!1sru!2sua!4v1578610306687!5m2!1sru!2sua","frameborder":"0","style":"border:0;","allowfullscreen":"","html":""}
+		]}
+]}
+]
