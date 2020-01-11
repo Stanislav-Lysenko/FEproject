@@ -10,5 +10,8 @@
 	"buy": true,
 	"country": "Canada",
 	"date_exp": "23.01.2020",
-	"link": ""
+	"link": "",
+	"pictures": [
+		{"link":"img/s-l5.jpg"}, {"link":"img/s-l5.jpg"}, {"link":"img/s-l5.jpg"}
+	]
 }

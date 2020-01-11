@@ -1,0 +1,132 @@
+.item-page {
+	flex: 0 0 100%;
+}
+.item-page__container {
+	display: flex;
+	padding: 4em 0;
+	flex: 0 0 100%;
+}
+
+.item-page__gallery {
+	width: 50rem;
+}
+
+.item-page__gallery-container {
+	width: 50rem;
+}
+
+.item-page__main-img-container {
+	padding-right: 4em;
+	padding: 0.5em;
+	overflow: hidden;
+	border: 1px solid $bg-second-color;
+	border-radius: 5px;
+	background-color: $bg-main-color;
+}
+
+.item-page__main-img {
+	display: block;
+	margin: 0 auto;
+	max-width: 100%;
+}
+
+.item-page__list-images {
+	display: flex;
+	padding: 2em 0;
+}
+
+.item-page__img-container {
+	flex: 0 1 25%;
+	width: 25%;
+	padding: 0.2em;
+	overflow: hidden;
+	border: 1px solid $bg-second-color;
+	border-radius: 5px;
+	background-color: $bg-main-color;
+}
+
+.item-page__pre-img {
+	max-width: 100%;
+}
+
+.item-page__info {
+	font-size: 1.6em;
+	padding: 2em;
+	display: flex;
+	flex-direction: column;
+	flex: 100%;
+}
+
+.item-page__title {
+	color: $link-text-color;
+	padding-bottom: 1em;
+}
+
+.item-page__condition {
+	color: $link-subtext-color;
+	padding-bottom: 0.5em;
+}
+
+.item__condition-value {
+	color: $main-text-color;
+	padding-left: 2em;
+}
+
+.item-page__bid-container {
+	padding-bottom: 0.5em;
+}
+
+.item-page__start-bid {
+	color: $link-subtext-color;
+	padding-bottom: 0.5em;
+}
+
+.item-page__start-bid-price {
+	color: $main-text-color;
+	font-weight: bold;
+	font-size: 1.6em;
+	padding-left: 0.5em;
+}
+
+.item-page__start-bid-price::after {
+	content: "$";
+	padding-left: 0.2em;
+}
+
+.item-page__start-bid-input {
+	width: 6em;
+	height: 2em;
+	outline: none;
+}
+
+.item-page__bid-container {
+	display: flex;
+	justify-content: space-around;
+	padding: 2em;
+	align-items: center;
+}
+
+.item-page__details {
+	background-color: $bg-second-color;
+}
+
+.item-page__price {
+	color: $link-subtext-color;
+}
+
+.item-page__price-value {
+	color: $main-text-color;
+	font-size: 1.6em;
+}
+
+.item-page__price-value::after {
+	content: "$";
+	padding-left: 0.2em;
+}
+
+.item-page__price-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	padding: 2em;
+}

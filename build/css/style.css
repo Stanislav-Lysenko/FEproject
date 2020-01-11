@@ -833,4 +833,127 @@ a {
   font-size: 1.4em;
   padding-bottom: 1em; }
 
+.item-page {
+  -webkit-box-flex: 0;
+  flex: 0 0 100%; }
+
+.item-page__container {
+  display: -webkit-box;
+  display: flex;
+  padding: 4em 0;
+  -webkit-box-flex: 0;
+  flex: 0 0 100%; }
+
+.item-page__gallery {
+  width: 50rem; }
+
+.item-page__gallery-container {
+  width: 50rem; }
+
+.item-page__main-img-container {
+  padding-right: 4em;
+  padding: 0.5em;
+  overflow: hidden;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  background-color: #ffffff; }
+
+.item-page__main-img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%; }
+
+.item-page__list-images {
+  display: -webkit-box;
+  display: flex;
+  padding: 2em 0; }
+
+.item-page__img-container {
+  -webkit-box-flex: 0;
+  flex: 0 1 25%;
+  width: 25%;
+  padding: 0.2em;
+  overflow: hidden;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  background-color: #ffffff; }
+
+.item-page__pre-img {
+  max-width: 100%; }
+
+.item-page__info {
+  font-size: 1.6em;
+  padding: 2em;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-flex: 100%;
+  flex: 100%; }
+
+.item-page__title {
+  color: #0654ba;
+  padding-bottom: 1em; }
+
+.item-page__condition {
+  color: #767676;
+  padding-bottom: 0.5em; }
+
+.item__condition-value {
+  color: #000000;
+  padding-left: 2em; }
+
+.item-page__bid-container {
+  padding-bottom: 0.5em; }
+
+.item-page__start-bid {
+  color: #767676;
+  padding-bottom: 0.5em; }
+
+.item-page__start-bid-price {
+  color: #000000;
+  font-weight: bold;
+  font-size: 1.6em;
+  padding-left: 0.5em; }
+
+.item-page__start-bid-price::after {
+  content: "$";
+  padding-left: 0.2em; }
+
+.item-page__start-bid-input {
+  width: 6em;
+  height: 2em;
+  outline: none; }
+
+.item-page__bid-container {
+  display: -webkit-box;
+  display: flex;
+  justify-content: space-around;
+  padding: 2em;
+  -webkit-box-align: center;
+  align-items: center; }
+
+.item-page__details {
+  background-color: #cccccc; }
+
+.item-page__price {
+  color: #767676; }
+
+.item-page__price-value {
+  color: #000000;
+  font-size: 1.6em; }
+
+.item-page__price-value::after {
+  content: "$";
+  padding-left: 0.2em; }
+
+.item-page__price-container {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2em; }
+
 /*# sourceMappingURL=style.css.map */

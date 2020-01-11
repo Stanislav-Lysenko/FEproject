@@ -9,6 +9,15 @@
 	<script src="js/main.js" defer></script>
 </head>
 <body>
+
+	<template id="gallery-item">
+		<li class="item-page__img-container">
+			<a class="item-page__img-link" href="{{=link}}">
+				<img class="item-page__pre-img" src="{{=link}}">
+			</a>
+		</li>
+	</template>
+
 	<template id="item">
 		<div class="item">
 			<div class="item__container">
@@ -37,24 +46,36 @@
 		<div class="item-page">
 			<div class="item-page__container">
 				<div class="item-page__gallery">
-					<div class="item__img-container">
-						<img class="item__img-preview" src="{{=previmg_path}}">
+					<div class="item-page__gallery-container">
+						<div class="item-page__main-img-container">
+							<img class="item-page__main-img" src="{{=previmg_path}}">
+						</div>
+						<ul class="item-page__list-images">
+						</ul>
 					</div>
 				</div>
-				<div class="item-page__content">
-					<h3 class="item-page__title"></h3>
-						<p class="item-page__condition">Condition<span class="item__condition-value">{{=condition}}</span></p>
+				<div class="item-page__info">
+					<h3 class="item-page__title">{{=title}}</h3>
+						<p class="item-page__condition">Condition:<span class="item__condition-value">{{=condition}}</span></p>
 					<div class="item-page__details">
 						{{ if (auction) { }}
-						<p class="item-page__start-bid-value"><span class="item-page__start-bid">Starting bids</span>{{=price}}</p>
-						<div><inpit type="text" size="11" maxlenght="10" autocoplete="off" name="maxbid"></inpit>
-							<button class="item-page__btn-bid btn">Place bid</button>
+						<div class="item-page__bid-container">
+							<span class="item-page__start-bid">Starting bids:</span>
+							<span class="item-page__start-bid-price">{{=price}}</span>
+							<p class="item-page_bids-value">{{=bids}}<span class="item-page_bids">bids</span></p>
 						</div>
-						<p class="item-page_bids-value">{{=bids}}<span class="item-page_bids">bids</span></p>
+						<div class="item-page__bid-container">
+							<input  class="item-page__start-bid-input" type="text" size="11" maxlenght="10" autocoplete="off" name="maxbid">
+							<button class="item-page__btn-bid btn">Place bid</button>
+
+						</div>
 						{{ } }}
 						{{ if (buy) { }}
-						<p class="item-page__price">{{=price}}</p>
-						<button class="item-page-buy">Buy it now</button>
+						<div class="item-page__price-container">
+							<span class="item-page__price">Price:</span>
+							<span class="item-page__price-value">{{=price}}</span>
+							<button class="item-page-buy btn">Buy it now</button>
+						</div>
 						{{ } }}
 					</div>
 				</div>
