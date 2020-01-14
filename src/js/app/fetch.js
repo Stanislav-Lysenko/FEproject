@@ -48,13 +48,10 @@ const init = async ()=> {
 	//
 
 	var tempGallery = document.getElementById('gallery-item');
-	console.dir(tempGallery)
 	var template2 = _.template(tempGallery.innerHTML);
-	console.dir(data.pictures);
 	var resultUL = data.pictures.reduce((sum, current) => {
 		return template2(current) + sum;
 	},"" )
-	console.dir(resultUL);
 	document.getElementsByClassName('item-page__list-images')[0].innerHTML = resultUL;
 }
 
@@ -67,3 +64,15 @@ document.addEventListener("DOMContentLoaded", function(){
 	};
 	init();
 });
+
+
+// let count = new URLSearchParams( location.search ).get('count') || 1;
+// setTimeout(() => {
+//   console.log(`count: ${ count++ }`);
+//   location.assign(`/contacts`);
+// }, 3000);
+
+// document.addEventListener("DOMContentLoaded", function(){
+// 	alert("new page");
+// });
+

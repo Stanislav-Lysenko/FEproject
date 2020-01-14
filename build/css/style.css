@@ -513,6 +513,17 @@ a {
 .footer__link:hover {
   border-bottom: 1px solid #0654ba; }
 
+.text-page {
+  padding: 2em 0; }
+
+.text-page__title {
+  font-size: 2em;
+  text-align: center;
+  color: #000000; }
+
+.text-page__text {
+  color: #767676; }
+
 .nav {
   display: -webkit-box;
   display: flex;

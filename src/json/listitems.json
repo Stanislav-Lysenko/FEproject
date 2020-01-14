@@ -1,6 +1,38 @@
 [
 	{
 		"id_item":"1",
+		"title":"PS Vita Aqua Blue Super",
+		"subtitle":"PCH 2000 ZA23 Wi-Fi Model Console Only Sony PlayStation",
+		"condition": "new",
+		"previmg_path": "img/s-l500.jpg",
+		"price": "113,00",
+		"bids": "0",
+		"auction": true,
+		"buy": false,
+		"date_exp": "23.01.2020",
+		"country": "Canada",
+		"pictures": [
+			{"link":"img/s-l5.jpg"}, {"link":"img/s-l5.jpg"}, {"link":"img/s-l5.jpg"}
+		]
+	},
+	{
+		"id_item":"2",
+		"title":"PlayStation Vita Aqua Blue",
+		"subtitle":"PCH 2000 ZA23 Wi-Fi Model Console Only Sony PlayStation",
+		"condition": "new",
+		"previmg_path": "img/s-l5.jpg",
+		"price": "99,00",
+		"bids": "0",
+		"auction": false,
+		"buy": true,
+		"country": "Canada",
+		"date_exp": "23.01.2020",
+		"pictures": [
+			{"link":"img/s-l5.jpg"}, {"link":"img/s-l5.jpg"}, {"link":"img/s-l5.jpg"}
+		]
+	},
+	{
+		"id_item":"3",
 		"title":"PS Vita Aqua Blue",
 		"subtitle":"PCH 2000 ZA23 Wi-Fi Model Console Only Sony PlayStation",
 		"condition": "new",
@@ -11,10 +43,12 @@
 		"buy": false,
 		"date_exp": "23.01.2020",
 		"country": "Canada",
-		"link":""
+		"pictures": [
+			{"link":"img/s-l5.jpg"}, {"link":"img/s-l5.jpg"}, {"link":"img/s-l5.jpg"}
+		]
 	},
 	{
-		"id_item":"2",
+		"id_item":"4",
 		"title":"PS Vita Aqua Blue",
 		"subtitle":"PCH 2000 ZA23 Wi-Fi Model Console Only Sony PlayStation",
 		"condition": "new",
@@ -25,10 +59,12 @@
 		"buy": true,
 		"country": "Canada",
 		"date_exp": "23.01.2020",
-		"link": ""
+		"pictures": [
+			{"link":"img/s-l5.jpg"}, {"link":"img/s-l5.jpg"}, {"link":"img/s-l5.jpg"}
+		]
 	},
 	{
-		"id_item":"1",
+		"id_item":"5",
 		"title":"PS Vita Aqua Blue",
 		"subtitle":"PCH 2000 ZA23 Wi-Fi Model Console Only Sony PlayStation",
 		"condition": "new",
@@ -39,10 +75,12 @@
 		"buy": false,
 		"date_exp": "23.01.2020",
 		"country": "Canada",
-		"link":""
+		"pictures": [
+			{"link":"img/s-l5.jpg"}, {"link":"img/s-l5.jpg"}, {"link":"img/s-l5.jpg"}
+		]
 	},
 	{
-		"id_item":"2",
+		"id_item":"6",
 		"title":"PS Vita Aqua Blue",
 		"subtitle":"PCH 2000 ZA23 Wi-Fi Model Console Only Sony PlayStation",
 		"condition": "new",
@@ -53,10 +91,12 @@
 		"buy": true,
 		"country": "Canada",
 		"date_exp": "23.01.2020",
-		"link": ""
+		"pictures": [
+			{"link":"img/s-l5.jpg"}, {"link":"img/s-l5.jpg"}, {"link":"img/s-l5.jpg"}
+		]
 	},
 	{
-		"id_item":"1",
+		"id_item":"7",
 		"title":"PS Vita Aqua Blue",
 		"subtitle":"PCH 2000 ZA23 Wi-Fi Model Console Only Sony PlayStation",
 		"condition": "new",
@@ -67,10 +107,12 @@
 		"buy": false,
 		"date_exp": "23.01.2020",
 		"country": "Canada",
-		"link":""
+		"pictures": [
+			{"link":"img/s-l5.jpg"}, {"link":"img/s-l5.jpg"}, {"link":"img/s-l5.jpg"}
+		]
 	},
 	{
-		"id_item":"2",
+		"id_item":"8",
 		"title":"PS Vita Aqua Blue",
 		"subtitle":"PCH 2000 ZA23 Wi-Fi Model Console Only Sony PlayStation",
 		"condition": "new",
@@ -81,10 +123,12 @@
 		"buy": true,
 		"country": "Canada",
 		"date_exp": "23.01.2020",
-		"link": ""
+		"pictures": [
+			{"link":"img/s-l5.jpg"}, {"link":"img/s-l5.jpg"}, {"link":"img/s-l5.jpg"}
+		]
 	},
 	{
-		"id_item":"1",
+		"id_item":"9",
 		"title":"PS Vita Aqua Blue",
 		"subtitle":"PCH 2000 ZA23 Wi-Fi Model Console Only Sony PlayStation",
 		"condition": "new",
@@ -95,10 +139,12 @@
 		"buy": false,
 		"date_exp": "23.01.2020",
 		"country": "Canada",
-		"link":""
+		"pictures": [
+			{"link":"img/s-l5.jpg"}, {"link":"img/s-l5.jpg"}, {"link":"img/s-l5.jpg"}
+		]
 	},
 	{
-		"id_item":"2",
+		"id_item":"10",
 		"title":"PS Vita Aqua Blue",
 		"subtitle":"PCH 2000 ZA23 Wi-Fi Model Console Only Sony PlayStation",
 		"condition": "new",
@@ -109,34 +155,8 @@
 		"buy": true,
 		"country": "Canada",
 		"date_exp": "23.01.2020",
-		"link": ""
-	},
-	{
-		"id_item":"1",
-		"title":"PS Vita Aqua Blue",
-		"subtitle":"PCH 2000 ZA23 Wi-Fi Model Console Only Sony PlayStation",
-		"condition": "new",
-		"previmg_path": "img/s-l500.jpg",
-		"price": "113,00",
-		"bids": "0",
-		"auction": true,
-		"buy": false,
-		"date_exp": "23.01.2020",
-		"country": "Canada",
-		"link":""
-	},
-	{
-		"id_item":"2",
-		"title":"PS Vita Aqua Blue",
-		"subtitle":"PCH 2000 ZA23 Wi-Fi Model Console Only Sony PlayStation",
-		"condition": "new",
-		"previmg_path": "img/s-l5.jpg",
-		"price": "99,00",
-		"bids": "0",
-		"auction": false,
-		"buy": true,
-		"country": "Canada",
-		"date_exp": "23.01.2020",
-		"link": ""
+		"pictures": [
+			{"link":"img/s-l5.jpg"}, {"link":"img/s-l5.jpg"}, {"link":"img/s-l5.jpg"}
+		]
 	}
 ]

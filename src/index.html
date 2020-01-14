@@ -22,10 +22,10 @@
 		<div class="item">
 			<div class="item__container">
 				<div class="item__img-container">
-					<img class="item__img-preview" src="{{=previmg_path}}">
+					<a class="item__img-link" href="/item{{=id_item}}" alt="item"><img class="item__img-preview" src="{{=previmg_path}}"></a>
 				</div>
 				<div class="item__info">
-					<h3 class="item__title"><a class="item__link" href="">{{=title}}</a></h3>
+					<h3 class="item__title"><a class="item__link" href="/item{{=id_item}}">{{=title}}</a></h3>
 					<div class="item__subtitle">
 						<span class="item__condition">{{=condition}}</span>
 						{{=subtitle}}
@@ -88,16 +88,15 @@
 		<div class="header__container">
 			<nav class="header__nav nav">
 				<ul class="nav__left">
-					<li class="nav__item"><a href="" class="nav__link nav__link_colored">Sign in</a><span> or </span><a class="nav__link nav__link_colored" href="">Register</a></li>
-					<li class="nav__item"><a href="" class="nav__link">Сategories</a></li>
-					<li class="nav__item"><a href="" class="nav__link">Contacts & Contacts</a></li>
-					<li class="nav__item"><a href="" class="nav__link">Advertising</a></li>
+					<li class="nav__item"><a href="/sign" class="nav__link nav__link_colored">Sign in</a><span> or </span><a class="nav__link nav__link_colored" href="/register">Register</a></li>
+					<li class="nav__item"><a href="/contacts" class="nav__link">Contacts & Contacts</a></li>
+					<li class="nav__item"><a href="/advert" class="nav__link">Advertising</a></li>
 				</ul>
 				<ul class="nav__right">
 					<li class="nav__item"><a href="" class="nav__link">My Letitbuy</a></li>
 					<li class="nav__item nav__item_sub-parent"><a href="" class="nav__link nav__link_par">Watch list</a>
 						<ul class="nav__sub">
-							<li class="nav__item nav__item_sub"><a class="nav__link" href="">Messages</a></li class="nav__item">
+							<li class="nav__item nav__item_sub"><a class="nav__link" href="">Messages</a></li>
 								<li class="nav__item nav__item_sub"><a class="nav__link" href="">Saved Sellers</a></li>
 								<li class="nav__item nav__item_sub"><a class="nav__link" href="">Saved Sellers</a></li>
 								<li class="nav__item nav__item_sub"><a class="nav__link" href="">Summary</a></li>
@@ -108,10 +107,10 @@
 				</nav>
 				<div class="header__head">
 					<div class="header__logo logo">
-						<a class="logo__link" href=""><img class="logo__img" src="img/logo.png" alt="Logo"></a>
+						<a class="logo__link" href="/"><img class="logo__img" src="img/logo.png" alt="Logo"></a>
 					</div>
 					<div class="header__search">
-						<form class="search" action="" autocomplete="off">
+						<form class="search" autocomplete="off">
 							<input class="search__input" type="search">
 							<input class="serach__btn-submit" type="button" value="Search">
 						</form>
@@ -123,36 +122,36 @@
 			<div class="main__container">
 
 				<!-- <aside class="aside">
-					<form class="filter" method="GET" action="">
+					<div class="filter">
 						<ul class="filter__list">
 							<li class="filter__option">
 								<div class="filter__name">Condition</div>
 								<label class="checkbox">
 									<input class="checkbox__input" type="checkbox" name="condition1" value="new">
-									<div class="checkbox__text">New</div>
-								</label class="checkbox">
+									<span class="checkbox__text">New</span>
+								</label>
 								<label class="checkbox">
 									<input class="checkbox__input" type="checkbox" name="condition2" value="used">
-									<div class="checkbox__text">Used</div>
+									<span class="checkbox__text">Used</span>
 								</label>
 								<label class="checkbox">
 									<input class="checkbox__input" type="checkbox" name="condition3" value="any">
-									<div class="checkbox__text">Any condition</div>
+									<span class="checkbox__text">Any condition</span>
 								</label>
 							</li>
 							<li class="filter__option">
 								<div class="filter__name">Delivery Options</div>
 								<label class="checkbox">
 									<input class="checkbox__input" type="checkbox" name="delivery1" value="free">
-									<div class="checkbox__text">Free Shipping</div>
+									<span class="checkbox__text">Free Shipping</span>
 								</label>
 								<label class="checkbox">
 									<input class="checkbox__input" type="checkbox" name="delivery2" value="freeinstore">
-									<div class="checkbox__text">Free In-store Pickup</div>
+									<span class="checkbox__text">Free In-store Pickup</span>
 								</label>
 								<label class="checkbox">
 									<input class="checkbox__input" type="checkbox" name="delivery3" value="freelocal">
-									<div class="checkbox__text">Free Local Pickup</div>
+									<span class="checkbox__text">Free Local Pickup</span>
 								</label>
 							</li>
 							<li class="filter__option">
@@ -167,15 +166,15 @@
 								<div class="filter__name">Buying Format</div>
 								<label class="radio">
 									<input class="radio__input" type="radio" name="format" value="now">
-									<div class="radio__text">Buy it now</div>
+									<span class="radio__text">Buy it now</span>
 								</label>
 								<label class="radio">
 									<input class="radio__input" type="radio" name="format" value="auction">
-									<div class="radio__text">Auction</div>
+									<span class="radio__text">Auction</span>
 								</label>
 							</li>
 						</ul>
-					</form>
+					</div>
 				</aside>
 				<section class="result">
 					<div class="result__sort">
@@ -193,10 +192,9 @@
 			<div class="footer__bg">
 				<div class="footer__container">
 						<ul class="footer__list">
-							<li class="footer__item"><a class="footer__link" href="">Registration</a></li>
-							<li class="footer__item"><a class="footer__link" href="">Rules</a></li>
-							<li class="footer__item"><a class="footer__link" href="">Contact us</a></li>
-							<li class="footer__item"><a class="footer__link" href="">Facebook</a></li>
+							<li class="footer__item"><a class="footer__link" href="/register">Registration</a></li>
+							<li class="footer__item"><a class="footer__link" href="/contacts">Contact us</a></li>
+							<li class="footer__item"><a class="footer__link" href="facebook.com" target="_blank">Facebook</a></li>
 						</ul>
 				</div>
 			</div>

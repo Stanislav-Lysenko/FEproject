@@ -1,0 +1,13 @@
+.text-page {
+	padding: 2em 0;
+}
+
+.text-page__title {
+	font-size: 2em;
+	text-align: center;
+	color: $main-text-color;
+}
+
+.text-page__text {
+	color: $link-subtext-color;
+}

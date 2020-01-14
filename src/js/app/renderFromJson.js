@@ -1,6 +1,3 @@
-// let mock = JSON.parse(data);
-// renderHTML(mock, document.body);
-
 function addTextNode(text) {
   let newtext = document.createTextNode(text);
   return newtext;

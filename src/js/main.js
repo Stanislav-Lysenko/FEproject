@@ -8,5 +8,9 @@
 /*
  * Custom
  */
-//= app/fetch.js
 //= app/renderFromJson.js
+//= app/getJSON.js
+//= app/storage.js
+//= app/manager.js
+//= app/init.js
+
