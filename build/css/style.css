@@ -915,12 +915,27 @@ a {
   color: #000000;
   padding-left: 2em; }
 
-.item-page__bid-container {
-  padding-bottom: 0.5em; }
-
 .item-page__start-bid {
   color: #767676;
   padding-bottom: 0.5em; }
+
+.item-page__date-container {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  padding: 0 2em;
+  -webkit-box-align: center;
+  align-items: center; }
+
+.item-page__date {
+  color: #767676; }
+
+.item-page__date-value {
+  color: #000000; }
+
+.item-page_bids {
+  padding-left: 0.2em; }
 
 .item-page__start-bid-price {
   color: #000000;
@@ -940,7 +955,8 @@ a {
 .item-page__bid-container {
   display: -webkit-box;
   display: flex;
-  justify-content: space-around;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
   padding: 2em;
   -webkit-box-align: center;
   align-items: center; }

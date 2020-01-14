@@ -26,7 +26,7 @@
 		"auction": false,
 		"buy": true,
 		"country": "Canada",
-		"date_exp": "23.01.2020",
+		"date_exp": "24.01.2020",
 		"pictures": [
 			{"link":"img/s-l5.jpg"}, {"link":"img/s-l5.jpg"}, {"link":"img/s-l5.jpg"}
 		]
@@ -41,7 +41,7 @@
 		"bids": "0",
 		"auction": true,
 		"buy": false,
-		"date_exp": "23.01.2020",
+		"date_exp": "29.01.2020",
 		"country": "Canada",
 		"pictures": [
 			{"link":"img/s-l5.jpg"}, {"link":"img/s-l5.jpg"}, {"link":"img/s-l5.jpg"}
@@ -58,7 +58,7 @@
 		"auction": false,
 		"buy": true,
 		"country": "Canada",
-		"date_exp": "23.01.2020",
+		"date_exp": "30.01.2020",
 		"pictures": [
 			{"link":"img/s-l5.jpg"}, {"link":"img/s-l5.jpg"}, {"link":"img/s-l5.jpg"}
 		]
@@ -73,7 +73,7 @@
 		"bids": "0",
 		"auction": true,
 		"buy": false,
-		"date_exp": "23.01.2020",
+		"date_exp": "31.01.2020",
 		"country": "Canada",
 		"pictures": [
 			{"link":"img/s-l5.jpg"}, {"link":"img/s-l5.jpg"}, {"link":"img/s-l5.jpg"}
@@ -146,7 +146,7 @@
 	{
 		"id_item":"10",
 		"title":"PS Vita Aqua Blue",
-		"subtitle":"PCH 2000 ZA23 Wi-Fi Model Console Only Sony PlayStation",
+		"subtitle":"Sony PlayStation",
 		"condition": "new",
 		"previmg_path": "img/s-l5.jpg",
 		"price": "99,00",
@@ -154,7 +154,7 @@
 		"auction": false,
 		"buy": true,
 		"country": "Canada",
-		"date_exp": "23.01.2020",
+		"date_exp": "30.01.2020",
 		"pictures": [
 			{"link":"img/s-l5.jpg"}, {"link":"img/s-l5.jpg"}, {"link":"img/s-l5.jpg"}
 		]

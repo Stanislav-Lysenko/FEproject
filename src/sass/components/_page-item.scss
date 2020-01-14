@@ -72,13 +72,28 @@
 	padding-left: 2em;
 }
 
-.item-page__bid-container {
-	padding-bottom: 0.5em;
-}
-
 .item-page__start-bid {
 	color: $link-subtext-color;
 	padding-bottom: 0.5em;
+}
+
+.item-page__date-container {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 2em;
+	align-items: center;
+}
+
+.item-page__date {
+	color: $link-subtext-color
+}
+
+.item-page__date-value {
+	color: $main-text-color;
+}
+
+.item-page_bids {
+	padding-left: 0.2em;
 }
 
 .item-page__start-bid-price {
@@ -101,7 +116,7 @@
 
 .item-page__bid-container {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	padding: 2em;
 	align-items: center;
 }

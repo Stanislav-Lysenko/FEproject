@@ -20,10 +20,6 @@ class Manager {
 						console.dir(curentUrl.pathname);
 		}
 
-		render() {
-
-		}
-
 		async renderContactsPage() {
 			let response = await fetch('json/page-contacts.json');
 			let data = await response.json();
