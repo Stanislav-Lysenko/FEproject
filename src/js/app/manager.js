@@ -1,6 +1,8 @@
 class Manager {
 	constructor(){
 		this.storage = new Storage();
+		this.filter = new Filter();
+
 		this.regExpId = /^\/item\d+$/i;
 		this.init();
 	}
@@ -9,16 +11,16 @@ class Manager {
 			this.onloadPage();
 		}
 
-	 render() {
-			var templateContent = document.getElementById("item");
-				var template = _.template(templateContent.innerHTML);
-				var result = this.storage.getTempStorage('items').reduce(function(sum, current) {
-								return  template(current) + sum;
-						}.bind(this),"");
-						document.getElementsByClassName("result__container")[0].innerHTML = result;
-						let curentUrl = window.location;
-						console.dir(curentUrl.pathname);
-		}
+	//  render() {
+	// 		var templateContent = document.getElementById("item");
+	// 			var template = _.template(templateContent.innerHTML);
+	// 			var result = this.storage.getTempStorage('items').reduce(function(sum, current) {
+	// 							return  template(current) + sum;
+	// 					}.bind(this),"");
+	// 					document.getElementsByClassName("result__container")[0].innerHTML = result;
+	// 					let curentUrl = window.location;
+	// 					console.dir(curentUrl.pathname);
+	// 	}
 
 		async renderContactsPage() {
 			let response = await fetch('json/page-contacts.json');
@@ -65,7 +67,7 @@ class Manager {
 			renderHTML(data, document.getElementsByClassName('main__container')[0]);
 		}
 
-		getURL() {
+		getPath() {
 			this.currentPathName = window.location.pathname;
 			this.getParams = window.location.search;
 		}
@@ -75,7 +77,7 @@ class Manager {
 			return this.currentPathName.match(reg)[1];
 		}
 		async onloadPage() {
-			this.getURL();
+			this.getPath();
 			//console.log(this.currentPathName);
 			if (this.currentPathName.match(this.regExpId)){
 				this.renderItemPage(this.storage.getItemById(this.getItemIdfromPath()))
@@ -94,6 +96,7 @@ class Manager {
 						this.renderAdvert();
 					case '/':
 						await this.renderMainPage();
+						this.filter.init();
 						this.renderResult();
 					break;
 					default: console.log('page not found');

@@ -37,6 +37,7 @@
 						{{ } }}
 						<p class="item__date-expiration">{{=date_exp}}</p>
 						<p class="item__country">{{=country}}</p>
+						<p class="item__shipping">{{=shipping}}</p>
 					</div>
 				</div>
 			</div>
@@ -56,7 +57,8 @@
 				</div>
 				<div class="item-page__info">
 					<h3 class="item-page__title">{{=title}}</h3>
-						<p class="item-page__condition">Condition:<span class="item__condition-value">{{=condition}}</span></p>
+						<p class="item-page__condition">Condition:<span class="item-page__condition-value">{{=condition}}</span></p>
+						<p class="item-page__shipping">Shipping:<span class="item-page__shipping-value">{{=shipping}}</span></p>
 					<div class="item-page__details">
 						{{ if (auction) { }}
 						<div class="item-page__bid-container">
@@ -115,8 +117,8 @@
 					</div>
 					<div class="header__search">
 						<form class="search" autocomplete="off">
-							<input class="search__input" type="search">
-							<input class="serach__btn-submit" type="button" value="Search">
+							<input id="search" class="search__input" type="search">
+							<input id="search-input" class="serach__btn-submit" type="button" value="Search">
 						</form>
 					</div>
 				</div>
@@ -131,11 +133,11 @@
 							<li class="filter__option">
 								<div class="filter__name">Condition</div>
 								<label class="checkbox">
-									<input class="checkbox__input" type="checkbox" name="condition1" value="new">
+									<input id="condition-new" class="checkbox__input" type="checkbox" name="condition1" value="new">
 									<span class="checkbox__text">New</span>
 								</label>
 								<label class="checkbox">
-									<input class="checkbox__input" type="checkbox" name="condition2" value="used">
+									<input id="condition-used" class="checkbox__input" type="checkbox" name="condition2" value="used">
 									<span class="checkbox__text">Used</span>
 								</label>
 								<label class="checkbox">
@@ -146,24 +148,24 @@
 							<li class="filter__option">
 								<div class="filter__name">Delivery Options</div>
 								<label class="checkbox">
-									<input class="checkbox__input" type="checkbox" name="delivery1" value="free">
+									<input id="shipping-free" class="checkbox__input" type="checkbox" name="shipping-free" value="free">
 									<span class="checkbox__text">Free Shipping</span>
 								</label>
 								<label class="checkbox">
-									<input class="checkbox__input" type="checkbox" name="delivery2" value="freeinstore">
+									<input id="shipping-instore" class="checkbox__input" type="checkbox" name="shipping-instore" value="instore">
 									<span class="checkbox__text">Free In-store Pickup</span>
 								</label>
 								<label class="checkbox">
-									<input class="checkbox__input" type="checkbox" name="delivery3" value="freelocal">
+									<input id="shipping-local" class="checkbox__input" type="checkbox" name="shipping-local" value="local">
 									<span class="checkbox__text">Free Local Pickup</span>
 								</label>
 							</li>
 							<li class="filter__option">
 								<div class="filter__name">Price</div>
 								<div class="price__container">
-									<span class="price__currency">$</span><input class="price__input" pattern="\d*" size="3" maxlength="6" type="text" name="from" autocomplete="off">
-									<span class="price__currency">-$</span><input class="price__input" pattern="\d*" size="3" maxlength="6" type="text" name="to" autocomplete="off">
-									<button class="price__btn">&#129106;</button>
+									<span id="from" class="price__currency">$</span><input class="price__input" pattern="\d*" size="3" maxlength="6" type="text" name="from" autocomplete="off">
+									<span id="to" class="price__currency">-$</span><input class="price__input" pattern="\d*" size="3" maxlength="6" type="text" name="to" autocomplete="off">
+									<button id="btnfromto" class="price__btn">&#129106;</button>
 								</div>
 							</li>
 							<li class="filter__option">
@@ -198,7 +200,7 @@
 						<ul class="footer__list">
 							<li class="footer__item"><a class="footer__link" href="/register">Registration</a></li>
 							<li class="footer__item"><a class="footer__link" href="/contacts">Contact us</a></li>
-							<li class="footer__item"><a class="footer__link" href="facebook.com" target="_blank">Facebook</a></li>
+							<li class="footer__item"><a class="footer__link" href="http://www.facebook.com" target="_blank">Facebook</a></li>
 						</ul>
 				</div>
 			</div>

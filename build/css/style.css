@@ -911,7 +911,15 @@ a {
   color: #767676;
   padding-bottom: 0.5em; }
 
-.item__condition-value {
+.item-page__condition-value {
+  color: #000000;
+  padding-left: 2em; }
+
+.item-page__shipping {
+  color: #767676;
+  padding-bottom: 0.5em; }
+
+.item-page__shipping-value {
   color: #000000;
   padding-left: 2em; }
 

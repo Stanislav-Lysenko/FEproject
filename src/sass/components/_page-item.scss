@@ -67,10 +67,22 @@
 	padding-bottom: 0.5em;
 }
 
-.item__condition-value {
+.item-page__condition-value {
 	color: $main-text-color;
 	padding-left: 2em;
 }
+
+.item-page__shipping {
+	color: $link-subtext-color;
+	padding-bottom: 0.5em;
+}
+
+.item-page__shipping-value {
+	color: $main-text-color;
+	padding-left: 2em;
+}
+
+
 
 .item-page__start-bid {
 	color: $link-subtext-color;

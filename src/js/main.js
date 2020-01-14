@@ -11,6 +11,7 @@
 //= app/renderFromJson.js
 //= app/getJSON.js
 //= app/storage.js
+//= app/filter.js
 //= app/manager.js
 //= app/init.js
 
