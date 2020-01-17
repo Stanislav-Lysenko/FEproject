@@ -163,19 +163,19 @@
 							<li class="filter__option">
 								<div class="filter__name">Price</div>
 								<div class="price__container">
-									<span id="from" class="price__currency">$</span><input class="price__input" pattern="\d*" size="3" maxlength="6" type="text" name="from" autocomplete="off">
-									<span id="to" class="price__currency">-$</span><input class="price__input" pattern="\d*" size="3" maxlength="6" type="text" name="to" autocomplete="off">
+									<span  class="price__currency">$</span><input id="from" class="price__input" pattern="\d*" size="3" maxlength="6" type="text" name="from" autocomplete="off">
+									<span  class="price__currency">-$</span><input id="to" class="price__input" pattern="\d*" size="3" maxlength="6" type="text" name="to" autocomplete="off">
 									<button id="btnfromto" class="price__btn">&#129106;</button>
 								</div>
 							</li>
 							<li class="filter__option">
 								<div class="filter__name">Buying Format</div>
 								<label class="radio">
-									<input class="radio__input" type="radio" name="format" value="now">
+									<input id="buyitnow" class="radio__input" type="radio" name="format" value="now">
 									<span class="radio__text">Buy it now</span>
 								</label>
 								<label class="radio">
-									<input class="radio__input" type="radio" name="format" value="auction">
+									<input id="auction" class="radio__input" type="radio" name="format" value="auction">
 									<span class="radio__text">Auction</span>
 								</label>
 							</li>

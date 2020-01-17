@@ -1,8 +1,7 @@
 class Manager {
 	constructor(){
 		this.storage = new Storage();
-		this.filter = new Filter();
-
+		//this.filter = new Filter();
 		this.regExpId = /^\/item\d+$/i;
 		this.init();
 	}
@@ -91,13 +90,15 @@ class Manager {
 					break;
 					case '/contacts':
 						this.renderContactsPage();
+						this.filter = new Filter();
 					break;
 					case '/advert':
 						this.renderAdvert();
 					case '/':
 						await this.renderMainPage();
-						this.filter.init();
 						this.renderResult();
+						// this.filter.init();
+						this.filter = new Filter({option: 'all'})
 					break;
 					default: console.log('page not found');
 				}
