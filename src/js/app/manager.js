@@ -1,25 +1,17 @@
 class Manager {
 	constructor(){
 		this.storage = new Storage();
-		//this.filter = new Filter();
 		this.regExpId = /^\/item\d+$/i;
+		this.regSearch = /^\/search$/i;
+		this.params = {};
 		this.init();
 	}
 		async init() {
 			await this.storage.init();
+			this.getPath();
+			this.getSearchParams()
 			this.onloadPage();
 		}
-
-	//  render() {
-	// 		var templateContent = document.getElementById("item");
-	// 			var template = _.template(templateContent.innerHTML);
-	// 			var result = this.storage.getTempStorage('items').reduce(function(sum, current) {
-	// 							return  template(current) + sum;
-	// 					}.bind(this),"");
-	// 					document.getElementsByClassName("result__container")[0].innerHTML = result;
-	// 					let curentUrl = window.location;
-	// 					console.dir(curentUrl.pathname);
-	// 	}
 
 		async renderContactsPage() {
 			let response = await fetch('json/page-contacts.json');
@@ -47,7 +39,6 @@ class Manager {
 		}
 
 		renderItemPage(obj) {
-			console.dir(obj);
 			let templatePageItem = document.getElementById("item-page");
 			let templateItem = _.template(templatePageItem.innerHTML);
 			let result = templateItem(obj);
@@ -66,21 +57,50 @@ class Manager {
 			renderHTML(data, document.getElementsByClassName('main__container')[0]);
 		}
 
+		renderByParams() {
+
+		}
+
+		checkUserSearchParams() {
+
+		}
+
 		getPath() {
 			this.currentPathName = window.location.pathname;
-			this.getParams = window.location.search;
 		}
+
+		getSearchParams() {
+			this.searchParams = window.location.search;
+		}
+
 		getItemIdfromPath() {
 			let reg = /^\/item(\d+$)/i;
-			console.log(this.currentPathName.match(reg)[1]);
 			return this.currentPathName.match(reg)[1];
 		}
+
+		parseSearchParams() {
+		let str =	'/search?condition1=new&condition2=used&shippingfree=free&shippinginstore=instore&shippinglocal=local&from=0&to=10&format=buyitnow&userrequest=mama+papa';
+		let paramsString = str.slice(8);
+			let elements = paramsString.split('&');
+			if (elements.length){
+				elements.forEach(element => {
+					var keyValue = element.split('=');
+					this.params[keyValue[0]] = keyValue[1];
+				})
+			}
+		}
+
 		async onloadPage() {
-			this.getPath();
-			//console.log(this.currentPathName);
+			this.parseSearchParams();
 			if (this.currentPathName.match(this.regExpId)){
 				this.renderItemPage(this.storage.getItemById(this.getItemIdfromPath()))
-			} else {
+			}
+			 if (this.currentPathName.match(this.regSearch)){
+				console.log('render by params');
+				await this.renderMainPage();
+				//this.renderResult();
+				this.filter = new Filter({option: 'all'})
+			 } else {
 				switch (this.currentPathName) {
 					case '/register':
 						console.log('register');
@@ -97,7 +117,6 @@ class Manager {
 					case '/':
 						await this.renderMainPage();
 						this.renderResult();
-						// this.filter.init();
 						this.filter = new Filter({option: 'all'})
 					break;
 					default: console.log('page not found');

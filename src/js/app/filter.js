@@ -123,6 +123,7 @@ class Filter {
 		}
 		// url = encodeURI(url.slice(0, -1));
 		url = url.slice(0, -1);
+		//console.log(url);
 		location.assign(url);
 	}
 

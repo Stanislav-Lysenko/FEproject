@@ -20,7 +20,7 @@
               {"tag":"li","class":"filter__option","children":[
                   {"tag":"div","class":"filter__name","html":"Delivery Options"},
                   {"tag":"label","class":"checkbox","children":[
-                      {"tag":"input","id":"shipping-free","class":"checkbox__input","type":"checkbox","name":"shipping-free","value":"free","html":""},
+                      {"tag":"input","id":"shipping-free","class":"checkbox__input","type":"checkbox","name":"shippingfree","value":"free","html":""},
                       {"tag":"span","class":"checkbox__text","html":"Free Shipping"}
                     ]},
                   {"tag":"label","class":"checkbox","children":[

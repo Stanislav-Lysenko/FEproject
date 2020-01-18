@@ -30,8 +30,6 @@ class Storage {
 				} else {
 					this.tempItems = await getJSON(this.path.items);
 					this.saveToLocalStorage(key, this.tempItems);
-					console.dir(this.tempItems);
-					console.dir(this.getItemById(10));
 				}
 			break;
 			case 'users':
@@ -61,8 +59,6 @@ class Storage {
 	}
 
 	getItemById(id) {
-		console.dir(this.tempItems);
-		console.dir(this.tempItems.find(item => item.id_item == id));
 		return this.tempItems.find(item => item.id_item == id);
 	}
 }
