@@ -82,7 +82,6 @@ class Filter {
 
 	autoCheck() {
 		if (this.params['condition']){
-			console.log('here');
 			let arrParams = this.makeArray(this.params['condition']);
 			this.autoCheckCondition(arrParams);
 		}
@@ -102,6 +101,14 @@ class Filter {
 		if (this.params['format']){
 			this.autoCheckFormat(this.params['format']);
 		}
+		if (this.params['userrequest']){
+			let arrParams = this.makeArray(this.params['userrequest']);
+			this.autoFillSearch(arrParams);
+		}
+	}
+
+	autoFillSearch(arr) {
+		this.nodes.search.value = arr.join(' ');
 	}
 
 	autoCheckFormat(value){
@@ -175,7 +182,6 @@ class Filter {
 	checkFormat(e) {
 		for (let i = 0; i < this.nodes.format.length; i++) {
 			if (this.nodes.format[i].checked) {
-				console.log('format');
 				this.params[this.nodes.format[i].getAttribute('name')] = this.nodes.format[i].value;
 			}
 		}
