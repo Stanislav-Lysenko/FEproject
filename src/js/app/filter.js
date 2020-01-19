@@ -1,10 +1,12 @@
 // option all or empty
 class Filter {
-	constructor({option = 'search'} ={}){
+	constructor({option = 'search', params = {}} ={}){
 		this.regExp = /^\/search.+/i;
-		this.option = option;
 		this.userrequestRegExp = /[a-z0-9a-zа-яё]+/gi;
-		this.params = {};
+		this.option = option;
+		this.params = params;
+		this.names = ['condition','shipping', 'userrequest', 'from', 'to'];
+		console.dir(this.params);
 		this.init();
 		return this;
 	}
@@ -13,17 +15,13 @@ class Filter {
 		this.findNodes();
 		this.bindAll();
 		this.addEvents();
+		this.autoCheck();
 	}
 
 	findNodes() {
 		if (this.option == 'all') {
 			this.nodes = {
-				// conditionNew: document.getElementById('condition-new'),
-				// conditionUsed: document.getElementById('condition-used'),
 				condition: document.getElementsByName('condition'),
-				// shippingFree: document.getElementById('shipping-free'),
-				// shippingInStore: document.getElementById('shipping-instore'),
-				// shippingLocal: document.getElementById('shipping-local'),
 				shipping: document.getElementsByName('shipping'),
 				from: document.getElementById('from'),
 				to: document.getElementById('to'),
@@ -32,7 +30,7 @@ class Filter {
 				searchBtn: document.getElementById('search-input'),
 				buyitnow: document.getElementById('buyitnow'),
 				auction: document.getElementById('auction'),
-				radio: document.getElementsByName('format'),
+				format: document.getElementsByName('format'),
 			}
 		} else {
 			this.nodes = {
@@ -47,29 +45,119 @@ class Filter {
 		this.checkCondition = this.checkCondition.bind(this);
 		this.checkShipping = this.checkShipping.bind(this);
 		this.rangePrice = this.rangePrice.bind(this);
-		this.checkRadio = this.checkRadio.bind(this);
+		this.checkFormat = this.checkFormat.bind(this);
 		this.search = this.search.bind(this);
+		this.handler = this.handler.bind(this);
+		this.handlerAll = this.handlerAll.bind(this);
 	}
 
 	addEvents() {
 		if (this.option == 'all'){
-			// this.nodes.conditionNew.addEventListener('click', this.handler);
-			// this.nodes.conditionUsed.addEventListener('click', this.handler);
-			this.nodes.condition[0].addEventListener('click', this.checkCondition);
-			this.nodes.condition[1].addEventListener('click', this.checkCondition);
-			// this.nodes.shippingFree.addEventListener('click', this.handler);
-			// this.nodes.shippingInStore.addEventListener('click', this.handler);
-			// this.nodes.shippingLocal.addEventListener('click', this.handler);
-			this.nodes.shipping[0].addEventListener('click', this.checkShipping);
-			this.nodes.shipping[1].addEventListener('click', this.checkShipping);
-			this.nodes.shipping[2].addEventListener('click', this.checkShipping);
-			this.nodes.btnfromto.addEventListener('click', this.rangePrice);
-			this.nodes.buyitnow.addEventListener('click', this.checkRadio);
-			this.nodes.auction.addEventListener('click', this.checkRadio);
-			this.nodes.searchBtn.addEventListener('click', this.search);
+			// this.nodes.condition[0].addEventListener('click', this.checkCondition);
+			// this.nodes.condition[1].addEventListener('click', this.checkCondition);
+			// this.nodes.shipping[0].addEventListener('click', this.checkShipping);
+			// this.nodes.shipping[1].addEventListener('click', this.checkShipping);
+			// this.nodes.shipping[2].addEventListener('click', this.checkShipping);
+			// this.nodes.btnfromto.addEventListener('click', this.rangePrice);
+			// this.nodes.buyitnow.addEventListener('click', this.checkFormat);
+			// this.nodes.auction.addEventListener('click', this.checkFormat);
+			// this.nodes.searchBtn.addEventListener('click', this.search);
+			this.nodes.condition[0].addEventListener('click', this.handlerAll);
+			this.nodes.condition[1].addEventListener('click', this.handlerAll);
+			this.nodes.shipping[0].addEventListener('click', this.handlerAll);
+			this.nodes.shipping[1].addEventListener('click', this.handlerAll);
+			this.nodes.shipping[2].addEventListener('click', this.handlerAll);
+			this.nodes.btnfromto.addEventListener('click', this.handlerAll);
+			this.nodes.format[0].addEventListener('click', this.handlerAll);
+			this.nodes.format[1].addEventListener('click', this.handlerAll);
+			this.nodes.searchBtn.addEventListener('click', this.handlerAll);
 		} else {
-			this.nodes.searchBtn.addEventListener('click', this.search);
+			this.nodes.searchBtn.addEventListener('click', this.handler);
 		}
+	}
+
+	makeArray(str) {
+		return str.split(',');
+	}
+
+	autoCheck() {
+		if (this.params['condition']){
+			console.log('here');
+			let arrParams = this.makeArray(this.params['condition']);
+			this.autoCheckCondition(arrParams);
+		}
+		if (this.params['shipping']){
+			let arrParams = this.makeArray(this.params['shipping']);
+			this.autoCheckShipping(arrParams);
+		}
+
+		if (this.params['to']){
+			let arrParams = this.makeArray(this.params['to']);
+			this.autoCheckRangePrice(arrParams, 'to');
+		}
+		if (this.params['from']){
+			let arrParams = this.makeArray(this.params['from']);
+			this.autoCheckRangePrice(arrParams, 'from');
+		}
+		if (this.params['format']){
+			this.autoCheckFormat(this.params['format']);
+		}
+	}
+
+	autoCheckFormat(value){
+		switch (value) {
+			case 'buyitnow':
+				this.nodes.format[0].checked = true;
+			break;
+			case 'auction':
+				this.nodes.format[1].checked = true;
+			break;
+			default: console.log('invalid query string');
+		}
+
+	}
+
+	autoCheckRangePrice(arr, input){
+		switch (input) {
+			case 'to':
+				this.nodes.to.value = arr.toString();
+			break;
+			case 'from':
+				this.nodes.from.value = arr.toString();
+			break;
+			default: console.log('invalid query string');
+		}
+
+	}
+	autoCheckShipping(arr) {
+		arr.forEach(element => {
+			switch (element) {
+				case 'free':
+					this.nodes.shipping[0].checked = true;
+				break;
+				case 'instore':
+					this.nodes.shipping[1].checked = true;
+				break;
+				case 'local':
+					this.nodes.shipping[2].checked = true;
+				break;
+				default: console.log('invalid query string');
+			}
+		});
+	}
+
+	autoCheckCondition(arr) {
+		arr.forEach(element => {
+			switch (element) {
+				case 'new':
+					this.nodes.condition[0].checked = true;
+				break;
+				case 'used':
+					this.nodes.condition[1].checked = true;
+				break;
+				default: console.log('invalid query string');
+			}
+		});
 	}
 
 	getPath() {
@@ -77,19 +165,20 @@ class Filter {
 	}
 
 	search(e) {
-		this.params['userrequest'] = this.nodes.search.value.match(this.userrequestRegExp);
-		console.dir(this.params);
-		this.createURL();
+		if (this.nodes.search.value) {
+			this.params['userrequest'] = this.nodes.search.value.match(this.userrequestRegExp);
+		} else {
+			delete this.params['userrequest'];
+		}
 	}
 
-	checkRadio(e) {
-		for (let i = 0; i < this.nodes.radio.length; i++) {
-			if (this.nodes.radio[i].checked) {
-				this.params[e.target.getAttribute('name')] = this.nodes.radio[i].value;
+	checkFormat(e) {
+		for (let i = 0; i < this.nodes.format.length; i++) {
+			if (this.nodes.format[i].checked) {
+				console.log('format');
+				this.params[this.nodes.format[i].getAttribute('name')] = this.nodes.format[i].value;
 			}
 		}
-		console.dir(this.params);
-		this.createURL();
 	}
 
 	rangePrice(e) {
@@ -99,12 +188,9 @@ class Filter {
 		if (isFinite(to)) {
 			this.params['to'] = to;
 		}
-		console.dir(this.params);
-		this.createURL();
 	}
 
 	checkCondition(e) {
-		console.log(1111111);
 		let queryString = '';
 		for (let i = 0; i < this.nodes.condition.length; i++) {
 			if (this.nodes.condition[i].checked) {
@@ -112,8 +198,11 @@ class Filter {
 			}
 		}
 		queryString = queryString.slice(0, -1);
-		this.params[e.target.getAttribute('name')] = queryString;
-		this.createURL();
+		if (queryString) {
+			this.params[this.nodes.condition[0].getAttribute('name')] = queryString;
+		} else {
+			delete this.params[this.nodes.condition[0].getAttribute('name')];
+		}
 	}
 
 	checkShipping(e) {
@@ -124,12 +213,28 @@ class Filter {
 			}
 		}
 		queryString = queryString.slice(0, -1);
-		this.params[e.target.getAttribute('name')] = queryString;
+		if (queryString) {
+			this.params[this.nodes.shipping[0].getAttribute('name')] = queryString;
+		} else {
+			delete this.params[this.nodes.shipping[0].getAttribute('name')];
+		}
+	}
+
+	handlerAll(e) {
+		this.checkFormat();
+		this.checkCondition();
+		this.checkShipping();
+		this.rangePrice();
+		this.search();
+		this.createURL();
+	}
+
+	handler(e) {
+		this.search();
 		this.createURL();
 	}
 
 	createURL(){
-		console.log(1);
 		let url = '/search?';
 		for (key in this.params) {
 			if (key == 'userrequest') {
@@ -146,11 +251,4 @@ class Filter {
 		console.log(url);
 		location.assign(url);
 	}
-
 }
-
-// 		let count = new URLSearchParams( location.search ).get('count') || 1;
-// setTimeout(() => {
-//   console.log(`count: ${ count++ }`);
-//   location.assign(`/contacts`);
-// }, 3000);
