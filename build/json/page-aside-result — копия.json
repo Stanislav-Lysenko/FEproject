@@ -5,30 +5,26 @@
               {"tag":"li","class":"filter__option","children":[
                   {"tag":"div","class":"filter__name","html":"Condition"},
                   {"tag":"label","class":"checkbox","children":[
-                      {"tag":"input","class":"checkbox__input","type":"checkbox","name":"condition1","value":"new","html":""},
+                      {"tag":"input","id":"condition-new","class":"checkbox__input","type":"checkbox","name":"condition1","value":"new","html":""},
                       {"tag":"span","class":"checkbox__text","html":"New"}
                     ]},
                   {"tag":"label","class":"checkbox","children":[
-                      {"tag":"input","class":"checkbox__input","type":"checkbox","name":"condition2","value":"used","html":""},
+                      {"tag":"input","id":"condition-used","class":"checkbox__input","type":"checkbox","name":"condition2","value":"used","html":""},
                       {"tag":"span","class":"checkbox__text","html":"Used"}
-                    ]},
-                  {"tag":"label","class":"checkbox","children":[
-                      {"tag":"input","class":"checkbox__input","type":"checkbox","name":"condition3","value":"any","html":""},
-                      {"tag":"span","class":"checkbox__text","html":"Any condition"}
                     ]}
                 ]},
               {"tag":"li","class":"filter__option","children":[
                   {"tag":"div","class":"filter__name","html":"Delivery Options"},
                   {"tag":"label","class":"checkbox","children":[
-                      {"tag":"input","class":"checkbox__input","type":"checkbox","name":"delivery1","value":"free","html":""},
+                      {"tag":"input","id":"shipping-free","class":"checkbox__input","type":"checkbox","name":"shippingfree","value":"free","html":""},
                       {"tag":"span","class":"checkbox__text","html":"Free Shipping"}
                     ]},
                   {"tag":"label","class":"checkbox","children":[
-                      {"tag":"input","class":"checkbox__input","type":"checkbox","name":"delivery2","value":"freeinstore","html":""},
+                      {"tag":"input","id":"shipping-instore","class":"checkbox__input","type":"checkbox","name":"shippinginstore","value":"instore","html":""},
                       {"tag":"span","class":"checkbox__text","html":"Free In-store Pickup"}
                     ]},
                   {"tag":"label","class":"checkbox","children":[
-                      {"tag":"input","class":"checkbox__input","type":"checkbox","name":"delivery3","value":"freelocal","html":""},
+                      {"tag":"input","id":"shipping-local","class":"checkbox__input","type":"checkbox","name":"shippinglocal","value":"local","html":""},
                       {"tag":"span","class":"checkbox__text","html":"Free Local Pickup"}
                     ]}
                 ]},
@@ -36,20 +32,20 @@
                   {"tag":"div","class":"filter__name","html":"Price"},
                   {"tag":"div","class":"price__container","children":[
                       {"tag":"span","class":"price__currency","html":"$"},
-                      {"tag":"input","class":"price__input","pattern":"\\d*","size":"3","maxlength":"6","type":"text","name":"from","autocomplete":"off","html":""},
+                      {"tag":"input","id":"from","class":"price__input","pattern":"\\d*","size":"3","maxlength":"6","type":"text","name":"from","autocomplete":"off","html":""},
                       {"tag":"span","class":"price__currency","html":"-$"},
-                      {"tag":"input","class":"price__input","pattern":"\\d*","size":"3","maxlength":"6","type":"text","name":"to","autocomplete":"off","html":""},
-                      {"tag":"button","class":"price__btn","html":"🡒"}
+                      {"tag":"input","id":"to","class":"price__input","pattern":"\\d*","size":"3","maxlength":"6","type":"text","name":"to","autocomplete":"off","html":""},
+                      {"tag":"button","id":"btnfromto","class":"price__btn","html":"🡒"}
                     ]}
                 ]},
               {"tag":"li","class":"filter__option","children":[
                   {"tag":"div","class":"filter__name","html":"Buying Format"},
                   {"tag":"label","class":"radio","children":[
-                      {"tag":"input","class":"radio__input","type":"radio","name":"format","value":"now","html":""},
+                      {"tag":"input","id":"buyitnow","class":"radio__input","type":"radio","name":"format","value":"buyitnow","html":""},
                       {"tag":"span","class":"radio__text","html":"Buy it now"}
                     ]},
                   {"tag":"label","class":"radio","children":[
-                      {"tag":"input","class":"radio__input","type":"radio","name":"format","value":"auction","html":""},
+                      {"tag":"input","id":"auction","class":"radio__input","type":"radio","name":"format","value":"auction","html":""},
                       {"tag":"span","class":"radio__text","html":"Auction"}
                     ]}
                 ]}
@@ -59,7 +55,7 @@
   {"tag":"section","class":"result","children":[
       {"tag":"div","class":"result__sort","children":[
           [
-						{"tag":"select","class":"sort","children":[
+            {"tag":"select","class":"sort","children":[
 							{"tag":"option","value":"low_price","html":"Price: lower first"},
 							{"tag":"option","value":"high_price","html":"Price: highest first"}
 						]}

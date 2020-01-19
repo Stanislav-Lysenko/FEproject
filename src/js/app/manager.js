@@ -57,7 +57,7 @@ class Manager {
 			renderHTML(data, document.getElementsByClassName('main__container')[0]);
 		}
 
-		renderByParams() {
+		renderfilteredResult() {
 
 		}
 
@@ -79,7 +79,7 @@ class Manager {
 		}
 
 		parseSearchParams() {
-		let str =	'/search?condition1=new&condition2=used&shippingfree=free&shippinginstore=instore&shippinglocal=local&from=0&to=10&format=buyitnow&userrequest=mama+papa';
+		let str =	'/search?condition=new,used&shipping=free,instore,local&from=4&format=buyitnow&userrequest=mama+papa';
 		let paramsString = str.slice(8);
 			let elements = paramsString.split('&');
 			if (elements.length){
@@ -88,6 +88,7 @@ class Manager {
 					this.params[keyValue[0]] = keyValue[1];
 				})
 			}
+			console.log(this.params);
 		}
 
 		async onloadPage() {
@@ -99,6 +100,7 @@ class Manager {
 				console.log('render by params');
 				await this.renderMainPage();
 				//this.renderResult();
+				//this.renderfilteredResult();
 				this.filter = new Filter({option: 'all'})
 			 } else {
 				switch (this.currentPathName) {

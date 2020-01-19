@@ -18,11 +18,13 @@ class Filter {
 	findNodes() {
 		if (this.option == 'all') {
 			this.nodes = {
-				conditionNew: document.getElementById('condition-new'),
-				conditionUsed: document.getElementById('condition-used'),
-				shippingFree: document.getElementById('shipping-free'),
-				shippingInStore: document.getElementById('shipping-instore'),
-				shippingLocal: document.getElementById('shipping-local'),
+				// conditionNew: document.getElementById('condition-new'),
+				// conditionUsed: document.getElementById('condition-used'),
+				condition: document.getElementsByName('condition'),
+				// shippingFree: document.getElementById('shipping-free'),
+				// shippingInStore: document.getElementById('shipping-instore'),
+				// shippingLocal: document.getElementById('shipping-local'),
+				shipping: document.getElementsByName('shipping'),
 				from: document.getElementById('from'),
 				to: document.getElementById('to'),
 				btnfromto: document.getElementById('btnfromto'),
@@ -42,7 +44,8 @@ class Filter {
 	}
 
 	bindAll() {
-		this.handler = this.handler.bind(this);
+		this.checkCondition = this.checkCondition.bind(this);
+		this.checkShipping = this.checkShipping.bind(this);
 		this.rangePrice = this.rangePrice.bind(this);
 		this.checkRadio = this.checkRadio.bind(this);
 		this.search = this.search.bind(this);
@@ -50,11 +53,16 @@ class Filter {
 
 	addEvents() {
 		if (this.option == 'all'){
-			this.nodes.conditionNew.addEventListener('click', this.handler);
-			this.nodes.conditionUsed.addEventListener('click', this.handler);
-			this.nodes.shippingFree.addEventListener('click', this.handler);
-			this.nodes.shippingInStore.addEventListener('click', this.handler);
-			this.nodes.shippingLocal.addEventListener('click', this.handler);
+			// this.nodes.conditionNew.addEventListener('click', this.handler);
+			// this.nodes.conditionUsed.addEventListener('click', this.handler);
+			this.nodes.condition[0].addEventListener('click', this.checkCondition);
+			this.nodes.condition[1].addEventListener('click', this.checkCondition);
+			// this.nodes.shippingFree.addEventListener('click', this.handler);
+			// this.nodes.shippingInStore.addEventListener('click', this.handler);
+			// this.nodes.shippingLocal.addEventListener('click', this.handler);
+			this.nodes.shipping[0].addEventListener('click', this.checkShipping);
+			this.nodes.shipping[1].addEventListener('click', this.checkShipping);
+			this.nodes.shipping[2].addEventListener('click', this.checkShipping);
 			this.nodes.btnfromto.addEventListener('click', this.rangePrice);
 			this.nodes.buyitnow.addEventListener('click', this.checkRadio);
 			this.nodes.auction.addEventListener('click', this.checkRadio);
@@ -95,16 +103,28 @@ class Filter {
 		this.createURL();
 	}
 
-	handler(e) {
-		let url = new URLSearchParams(location.search).get(e.target.getAttribute('value'));
-		console.log(location.search);
-		if (!this.params[e.target.getAttribute('name')]) {
-			this.params[e.target.getAttribute('name')] = e.target.getAttribute('value');
-			console.dir(this.params);
-		} else {
-			delete this.params[e.target.getAttribute('name')];
-			console.dir(this.params);
+	checkCondition(e) {
+		console.log(1111111);
+		let queryString = '';
+		for (let i = 0; i < this.nodes.condition.length; i++) {
+			if (this.nodes.condition[i].checked) {
+				queryString += this.nodes.condition[i].value + ',';
+			}
 		}
+		queryString = queryString.slice(0, -1);
+		this.params[e.target.getAttribute('name')] = queryString;
+		this.createURL();
+	}
+
+	checkShipping(e) {
+		let queryString = '';
+		for (let i = 0; i < this.nodes.shipping.length; i++) {
+			if (this.nodes.shipping[i].checked) {
+				queryString += this.nodes.shipping[i].value + ',';
+			}
+		}
+		queryString = queryString.slice(0, -1);
+		this.params[e.target.getAttribute('name')] = queryString;
 		this.createURL();
 	}
 
@@ -114,7 +134,7 @@ class Filter {
 		for (key in this.params) {
 			if (key == 'userrequest') {
 				let requesturl = this.params[key].reduce((sum, current) => {
-					return sum + current + '+';
+					return sum + current + ',';
 				}, 'userrequest=');
 				url += requesturl.slice(0, -1) + '&';
 			} else {
@@ -123,7 +143,7 @@ class Filter {
 		}
 		// url = encodeURI(url.slice(0, -1));
 		url = url.slice(0, -1);
-		//console.log(url);
+		console.log(url);
 		location.assign(url);
 	}
 

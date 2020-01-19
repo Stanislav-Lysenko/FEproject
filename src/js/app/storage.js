@@ -3,6 +3,7 @@
 class Storage {
 	constructor(){
 		this.tempItems = [];
+		this.filteredtempItems = [];
 		this.tempUsers = [];
 		this.path = {
 			items: 'json/listitems.json',
@@ -60,5 +61,27 @@ class Storage {
 
 	getItemById(id) {
 		return this.tempItems.find(item => item.id_item == id);
+	}
+
+	getFilteredItems(params){
+		for ( key in params) {
+			return this.tempItems.map(item => item)
+		}
+	}
+
+	getItemsByCondition(params){
+
+	}
+
+	getItemsByShipping(params){
+
+	}
+
+	getItemsByFormat(params){
+
+	}
+
+	getItemsByPrice(params) {
+
 	}
 }
