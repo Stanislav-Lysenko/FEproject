@@ -70,6 +70,7 @@ class Storage {
 		filterArrItems = this.getItemsByShipping(filterArrItems);
 		filterArrItems = this.getItemsByFormat(filterArrItems);
 		filterArrItems = this.getItemsByPrice(filterArrItems);
+		filterArrItems = this.getItemsByUserRequest(filterArrItems);
 		console.dir(filterArrItems);
 
 	}
@@ -78,8 +79,16 @@ class Storage {
 		return str.split(',');
 	}
 
+	getItemsByUserRequest(arr){
+		if (this.filterParams['userrequest']){
+			console.log('here');
+			let strParams = this.makeArray(this.filterParams['userrequest']).join(' ');
+			return arr.filter(item => new RegExp(strParams, 'i').test(item.title));
+		}
+		return arr;
+	}
+
 	getItemsByPrice(arr){
-		console.log('here');
 		if(this.filterParams['from']) {
 			if (this.filterParams['to']) {
 				return arr.filter(item => {
