@@ -72,6 +72,7 @@ class Storage {
 		filterArrItems = this.getItemsByPrice(filterArrItems);
 		filterArrItems = this.getItemsByUserRequest(filterArrItems);
 		console.dir(filterArrItems);
+		return filterArrItems;
 
 	}
 

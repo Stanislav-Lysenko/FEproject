@@ -29,10 +29,10 @@ class Manager {
 		renderHTML(data, document.getElementsByClassName('main__container')[0]);
 	}
 
-	renderResult() {
+	renderResult(arr) {
 		let templateContent = document.getElementById("item");
 		let template = _.template(templateContent.innerHTML);
-		let result = this.storage.getTempStorage('items').reduce(function(sum, current) {
+		let result = arr.reduce(function(sum, current) {
 			return  template(current) + sum;
 		}.bind(this),"");
 		document.getElementsByClassName("result__container")[0].innerHTML = result;
@@ -58,10 +58,6 @@ class Manager {
 	}
 
 	renderfilteredResult() {
-
-	}
-
-	checkUserSearchParams() {
 
 	}
 
@@ -96,15 +92,14 @@ class Manager {
 
 	async onloadPage() {
 		this.parseSearchParams();
+		//render item by id
 		if (this.currentPathName.match(this.regExpId)){
 			this.renderItemPage(this.storage.getItemById(this.getItemIdfromPath()))
-		}
+		} //render by user filter and request
 		if (this.currentPathName.match(this.regSearch)){
 			console.log('render by params');
 			await this.renderMainPage();
-			this.storage.getFilteredItems(this.params);
-			//this.renderResult();
-			//this.renderfilteredResult();
+			this.renderResult(this.storage.getFilteredItems(this.params));
 			this.filter = new Filter({option: 'all', params: this.params})
 		} else {
 			switch (this.currentPathName) {
@@ -122,7 +117,7 @@ class Manager {
 				this.renderAdvert();
 				case '/':
 				await this.renderMainPage();
-				this.renderResult();
+				this.renderResult(this.storage.getTempStorage('items'));
 				this.filter = new Filter({option: 'all'})
 				break;
 				default: console.log('page not found');
