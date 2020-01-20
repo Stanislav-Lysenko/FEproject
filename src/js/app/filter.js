@@ -5,8 +5,6 @@ class Filter {
 		this.userrequestRegExp = /[a-z0-9a-zа-яё]+/gi;
 		this.option = option;
 		this.params = params;
-		this.names = ['condition','shipping', 'userrequest', 'from', 'to'];
-		console.dir(this.params);
 		this.init();
 		return this;
 	}
@@ -53,15 +51,6 @@ class Filter {
 
 	addEvents() {
 		if (this.option == 'all'){
-			// this.nodes.condition[0].addEventListener('click', this.checkCondition);
-			// this.nodes.condition[1].addEventListener('click', this.checkCondition);
-			// this.nodes.shipping[0].addEventListener('click', this.checkShipping);
-			// this.nodes.shipping[1].addEventListener('click', this.checkShipping);
-			// this.nodes.shipping[2].addEventListener('click', this.checkShipping);
-			// this.nodes.btnfromto.addEventListener('click', this.rangePrice);
-			// this.nodes.buyitnow.addEventListener('click', this.checkFormat);
-			// this.nodes.auction.addEventListener('click', this.checkFormat);
-			// this.nodes.searchBtn.addEventListener('click', this.search);
 			this.nodes.condition[0].addEventListener('click', this.handlerAll);
 			this.nodes.condition[1].addEventListener('click', this.handlerAll);
 			this.nodes.shipping[0].addEventListener('click', this.handlerAll);

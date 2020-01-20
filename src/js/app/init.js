@@ -5,5 +5,4 @@ document.addEventListener("DOMContentLoaded", function(){
 		escape      : /\{\{-([\s\S]+?)\}\}/g
 	};
 	let manager = new Manager();
-	console.log('init');
 });

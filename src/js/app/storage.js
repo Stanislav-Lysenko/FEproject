@@ -3,8 +3,8 @@
 class Storage {
 	constructor(){
 		this.tempItems = [];
-		this.filteredtempItems = [];
 		this.tempUsers = [];
+		this.filterParams = {};
 		this.path = {
 			items: 'json/listitems.json',
 			users: 'json/users.json'
@@ -64,21 +64,74 @@ class Storage {
 	}
 
 	getFilteredItems(params){
-		for ( key in params) {
-			return this.tempItems.map(item => item)
+		this.filterParams = params;
+		console.dir(this.filterParams);
+		let filterArrItems = this.getItemsByCondition();
+		filterArrItems = this.getItemsByShipping(filterArrItems);
+		filterArrItems = this.getItemsByFormat(filterArrItems);
+		console.dir(filterArrItems);
+
+	}
+
+	makeArray(str) {
+		return str.split(',');
+	}
+
+	getItemsByCondition(){
+		if (this.filterParams['condition']){
+			let arrParams = this.makeArray(this.filterParams['condition']);
+			if (arrParams.length == 2) {
+				return this.tempItems.filter(item => {return item.condition == arrParams[0] || item.condition == arrParams[1]})
+			}
+			if (arrParams.length == 1) {
+				return this.tempItems.filter(item => item.condition == arrParams[0]);
+			}
 		}
+		return this.tempItems;
 	}
 
-	getItemsByCondition(params){
-
+	replaceShippingParams(arr){
+		return arr.map(name =>{
+			if (name == 'free') {
+				return 'Free Shipping';
+			}
+			if (name == 'instore') {
+				return 'Free In-store Pickup';
+			}
+			if (name == 'local') {
+				return 'Free Local Pickup';
+			}
+		})
 	}
 
-	getItemsByShipping(params){
-
+	getItemsByShipping(arr){
+		if (this.filterParams['shipping']){
+			let arrParams = this.makeArray(this.filterParams['shipping']);
+			arrParams = this.replaceShippingParams(arrParams);
+			console.log(arrParams);
+				if (arrParams.length == 3) {
+					return arr.filter(item => {return item.shipping == arrParams[0] || item.shipping == arrParams[1] || item.shipping == arrParams[2]});
+				}
+				if (arrParams.length == 2) {
+					return arr.filter(item => {return item.shipping == arrParams[0] || item.shipping == arrParams[1]});
+				}
+				if (arrParams.length == 1) {
+					return arr.filter(item => item.shipping == arrParams[0]);
+				}
+		}
+		return arr;
 	}
 
-	getItemsByFormat(params){
-
+	getItemsByFormat(arr){
+		switch (this.filterParams['format']){
+			case 'buyitnow':
+				return arr.filter(item => item.buy == true);
+			break;
+			case 'auction':
+				return arr.filter(item => item.auction == true)
+			break;
+			default: console.log('default'); return arr;
+		}
 	}
 
 	getItemsByPrice(params) {

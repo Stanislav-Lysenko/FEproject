@@ -82,7 +82,6 @@ class Manager {
 		//let str =	'/search?condition=new,used&shipping=free,instore,local&from=4&format=buyitnow&userrequest=mama+papa';
 		let str = this.searchParams;
 		if (str){
-			console.log(0);
 			let paramsString = str.slice(1);
 			let elements = paramsString.split('&');
 			if (elements.length){
@@ -91,7 +90,7 @@ class Manager {
 					this.params[keyValue[0]] = keyValue[1];
 				})
 			}
-			console.dir(this.params);
+			//console.dir(this.params);
 		}
 	}
 
@@ -103,6 +102,7 @@ class Manager {
 		if (this.currentPathName.match(this.regSearch)){
 			console.log('render by params');
 			await this.renderMainPage();
+			this.storage.getFilteredItems(this.params);
 			//this.renderResult();
 			//this.renderfilteredResult();
 			this.filter = new Filter({option: 'all', params: this.params})
