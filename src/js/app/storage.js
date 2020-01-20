@@ -69,12 +69,29 @@ class Storage {
 		let filterArrItems = this.getItemsByCondition();
 		filterArrItems = this.getItemsByShipping(filterArrItems);
 		filterArrItems = this.getItemsByFormat(filterArrItems);
+		filterArrItems = this.getItemsByPrice(filterArrItems);
 		console.dir(filterArrItems);
 
 	}
 
 	makeArray(str) {
 		return str.split(',');
+	}
+
+	getItemsByPrice(arr){
+		console.log('here');
+		if(this.filterParams['from']) {
+			if (this.filterParams['to']) {
+				return arr.filter(item => {
+					return parseInt(item.price) >= +this.filterParams['from'] && parseInt(item.price) <= +this.filterParams['to'];
+				})
+			} else {
+				return arr.filter(item => {
+					return parseInt(item.price) >= +this.filterParams['from'];
+				})
+			}
+		}
+		return arr;
 	}
 
 	getItemsByCondition(){
@@ -132,9 +149,5 @@ class Storage {
 			break;
 			default: console.log('default'); return arr;
 		}
-	}
-
-	getItemsByPrice(params) {
-
 	}
 }
