@@ -49,10 +49,18 @@ class Storage {
 		localStorage.setItem(key, JSON.stringify(data));
 	}
 
+	comparePriceToHigh(itemA, itemB){
+		return itemB.price - itemA.price;
+	}
+
+	comparePriceToLow(itemA, itemB){
+		return itemA.price - itemB.price;
+	}
+
 	 getTempStorage(name) {
 		switch (name) {
 			case 'items':
-				return this.tempItems;
+				return this.tempItems.sort(this.comparePriceToHigh);
 			case 'users':
 				return this.tempUsers;
 			default: throw Error ('serever not respond');
@@ -71,6 +79,7 @@ class Storage {
 		filterArrItems = this.getItemsByFormat(filterArrItems);
 		filterArrItems = this.getItemsByPrice(filterArrItems);
 		filterArrItems = this.getItemsByUserRequest(filterArrItems);
+		filterArrItems - this.sortByDirection(filterArrItems)
 		console.dir(filterArrItems);
 		return filterArrItems;
 
@@ -80,9 +89,24 @@ class Storage {
 		return str.split(',');
 	}
 
+	sortByDirection(arr) {
+		if (this.filterParams['sort']){
+			switch (this.filterParams['sort']){
+				case 'lowprice':
+					return arr.sort(this.comparePriceToHigh);
+				break;
+				case 'highprice':
+					return arr.sort(this.comparePriceToLow);
+				break;
+				default: arr.sort(this.comparePriceToHigh);
+			}
+		}
+		return arr.sort(this.comparePriceToHigh);
+
+	}
+
 	getItemsByUserRequest(arr){
 		if (this.filterParams['userrequest']){
-			console.log('here');
 			let strParams = this.makeArray(this.filterParams['userrequest']).join(' ');
 			return arr.filter(item => new RegExp(strParams, 'i').test(item.title));
 		}

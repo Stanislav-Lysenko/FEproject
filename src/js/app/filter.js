@@ -29,6 +29,7 @@ class Filter {
 				buyitnow: document.getElementById('buyitnow'),
 				auction: document.getElementById('auction'),
 				format: document.getElementsByName('format'),
+				sort: document.getElementById('sort'),
 			}
 		} else {
 			this.nodes = {
@@ -45,6 +46,7 @@ class Filter {
 		this.rangePrice = this.rangePrice.bind(this);
 		this.checkFormat = this.checkFormat.bind(this);
 		this.search = this.search.bind(this);
+		this.sort = this.sort.bind(this);
 		this.handler = this.handler.bind(this);
 		this.handlerAll = this.handlerAll.bind(this);
 	}
@@ -60,6 +62,7 @@ class Filter {
 			this.nodes.format[0].addEventListener('click', this.handlerAll);
 			this.nodes.format[1].addEventListener('click', this.handlerAll);
 			this.nodes.searchBtn.addEventListener('click', this.handlerAll);
+			this.nodes.sort.addEventListener('change', this.handlerAll);
 		} else {
 			this.nodes.searchBtn.addEventListener('click', this.handler);
 		}
@@ -69,6 +72,7 @@ class Filter {
 		return str.split(',');
 	}
 
+	// check filter and sort options after location.assign
 	autoCheck() {
 		if (this.params['condition']){
 			let arrParams = this.makeArray(this.params['condition']);
@@ -93,6 +97,21 @@ class Filter {
 		if (this.params['userrequest']){
 			let arrParams = this.makeArray(this.params['userrequest']);
 			this.autoFillSearch(arrParams);
+		}
+		if (this.params['sort']){
+			this.autoCheckSort(this.params['sort']);
+		}
+	}
+
+	autoCheckSort(value){
+		switch (value) {
+			case 'lowprice':
+				this.nodes.sort.getElementsByTagName('option')[0].selected = true;
+			break;
+			case 'highprice':
+				this.nodes.sort.getElementsByTagName('option')[1].selected = true;
+			break;
+			default: console.log('invalid');
 		}
 	}
 
@@ -168,6 +187,13 @@ class Filter {
 		}
 	}
 
+	sort(e) {
+		let indexSelected = this.nodes.sort.selectedIndex;
+		console.log(indexSelected);
+		this.params[this.nodes.sort.getAttribute('name')] = this.nodes.sort.getElementsByTagName('option')[indexSelected].value;
+		console.dir(this.params);
+	}
+
 	checkFormat(e) {
 		for (let i = 0; i < this.nodes.format.length; i++) {
 			if (this.nodes.format[i].checked) {
@@ -221,6 +247,7 @@ class Filter {
 		this.checkShipping();
 		this.rangePrice();
 		this.search();
+		this.sort();
 		this.createURL();
 	}
 

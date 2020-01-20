@@ -55,9 +55,9 @@
   {"tag":"section","class":"result","children":[
       {"tag":"div","class":"result__sort","children":[
           [
-            {"tag":"select","class":"sort","children":[
-							{"tag":"option","value":"low_price","html":"Price: lower first"},
-							{"tag":"option","value":"high_price","html":"Price: highest first"}
+            {"tag":"select","id":"sort","class":"sort","name":"sort","children":[
+							{"tag":"option","id":"low","value":"lowprice","html":"Price: lower first"},
+							{"tag":"option","id":"high","value":"highprice","html":"Price: highest first"}
 						]}
           ]
         ]},
