@@ -1,13 +1,15 @@
 class Manager {
-	constructor(){
+	constructor({user = {}} = {}){
 		this.storage = new Storage();
 		this.regExpId = /^\/item\d+$/i;
 		this.regSearch = /^\/search$/i;
 		this.params = {};
+		this.user = user;
 		this.init();
 	}
 	async init() {
 		await this.storage.init();
+		console.dir(this.user);
 		this.getPath();
 		this.getSearchParams()
 		this.onloadPage();
@@ -57,8 +59,10 @@ class Manager {
 		renderHTML(data, document.getElementsByClassName('main__container')[0]);
 	}
 
-	renderfilteredResult() {
-
+	async renderSignin() {
+		let response = await fetch('json/page-signin.json');
+		let data = await response.json();
+		renderHTML(data, document.getElementsByClassName('main__container')[0]);
 	}
 
 	getPath() {
@@ -107,7 +111,8 @@ class Manager {
 				console.log('register');
 				break;
 				case '/sign':
-				console.log('sign');
+				await this.renderSignin();
+				this.signin = new Signin(this.storage.getTempStorage('users'));
 				break;
 				case '/contacts':
 				this.renderContactsPage();
@@ -115,6 +120,8 @@ class Manager {
 				break;
 				case '/advert':
 				this.renderAdvert();
+				this.filter = new Filter();
+				break;
 				case '/':
 				await this.renderMainPage();
 				this.renderResult(this.storage.getTempStorage('items'));

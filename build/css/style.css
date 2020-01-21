@@ -517,12 +517,51 @@ a {
   padding: 2em 0; }
 
 .text-page__title {
-  font-size: 2em;
+  font-size: 4em;
   text-align: center;
-  color: #000000; }
+  color: #000000;
+  padding-bottom: 0.5em; }
 
 .text-page__text {
-  color: #767676; }
+  font-size: 2em;
+  color: #767676;
+  margin: 0.5em 0; }
+
+.signin {
+  padding: 4em 0;
+  -webkit-box-flex: 0;
+  flex: 0 0 25%; }
+
+.signin__title {
+  font-size: 4em;
+  text-align: center;
+  color: #000000;
+  padding-bottom: 0.5em; }
+
+.signin__form {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column; }
+
+.signin__input {
+  display: block;
+  font-size: 1.3em;
+  height: 3.077em;
+  width: 100%;
+  padding: 0.769em;
+  outline: none;
+  color: #000000;
+  border: 1px solid #ebebeb;
+  margin: 1.538em 0; }
+
+.signin__btn {
+  margin: 1.538em 0; }
+
+.signin__warning {
+  font-size: 2em;
+  color: #dd1e31; }
 
 .nav {
   display: -webkit-box;

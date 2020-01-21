@@ -3,11 +3,14 @@
 }
 
 .text-page__title {
-	font-size: 2em;
+	font-size: 4em;
 	text-align: center;
 	color: $main-text-color;
+	padding-bottom: 0.5em;
 }
 
 .text-page__text {
+	font-size: 2em;
 	color: $link-subtext-color;
+	margin: 0.5em 0 ;
 }

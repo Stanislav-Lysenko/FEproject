@@ -1,0 +1,13 @@
+[
+	{"tag":"div","class":"signin","children":[
+		{"tag":"h2","class":"signin__title","html":"Sign in"},
+		{"tag":"form","class":"signin__form","name":"signin","action":"#","method":"POST","target":"_self","html":"", "children":
+			[
+				{"tag":"input","class":"signin__input","name":"email","type":"email","placeholder":"Your mail","autocomplete":"on","required":"","html":""},
+				{"tag":"input","class":"signin__input","name":"pass","type":"password","placeholder":"Your password","autocomplete":"on","required":"","html":""},
+				{"tag":"input","class":"signin__btn btn btn_small","name":"submit","type":"submit","value":"Sign in","html":""}
+			]
+		},
+		{"tag":"div","class":"signin__warning","html":""}
+		]}
+	]

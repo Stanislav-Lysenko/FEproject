@@ -1,0 +1,37 @@
+.signin {
+	padding: 4em 0;
+	flex: 0 0 25%;
+}
+
+.signin__title {
+	font-size: 4em;
+	text-align: center;
+	color: $main-text-color;
+	padding-bottom: 0.5em;
+}
+.signin__form {
+	display: flex;
+	flex-direction: column;
+}
+
+
+.signin__input {
+	display: block;
+	font-size: 1.3em;
+	height: 3.077em;
+	width: 100%;
+	padding: 0.769em;
+	outline: none;
+	color: #000000;
+	border: 1px solid #ebebeb;
+	margin: 1.538em 0;
+}
+
+.signin__btn {
+	margin: 1.538em 0;
+}
+
+.signin__warning {
+	font-size: 2em;
+	color: $warning-color;
+}

@@ -14,4 +14,5 @@
 //= app/filter.js
 //= app/manager.js
 //= app/init.js
+//= app/signin.js
 
