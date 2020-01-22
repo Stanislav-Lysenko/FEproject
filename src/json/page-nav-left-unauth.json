@@ -1,0 +1,13 @@
+[
+  {"tag":"li","class":"nav__item","children":[
+      {"tag":"a","href":"/sign","class":"nav__link nav__link_colored","html":"Sign in"},
+      {"tag":"span","html":" or "},
+      {"tag":"a","class":"nav__link nav__link_colored","href":"/register","html":"Register"}
+    ]},
+  {"tag":"li","class":"nav__item","children":[
+      {"tag":"a","href":"/contacts","class":"nav__link","html":"Contacts & Contacts"}
+    ]},
+  {"tag":"li","class":"nav__item","children":[
+      {"tag":"a","href":"/advert","class":"nav__link","html":"Advertising"}
+    ]}
+]

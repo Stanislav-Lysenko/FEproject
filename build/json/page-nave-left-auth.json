@@ -1,0 +1,13 @@
+[
+	{"tag":"li","class":"nav__item","children":[
+			{"tag":"span","html":"  "},
+			{"tag":"span","class":"nav__user-name","html":""},
+			{"tag":"a","class":"nav__link nav__link_colored","href":"/logout","html":"Log out"}
+		]},
+	{"tag":"li","class":"nav__item","children":[
+			{"tag":"a","href":"/contacts","class":"nav__link","html":"Contacts & Contacts"}
+		]},
+	{"tag":"li","class":"nav__item","children":[
+			{"tag":"a","href":"/advert","class":"nav__link","html":"Advertising"}
+		]}
+]

@@ -4,6 +4,7 @@ class Storage {
 	constructor(){
 		this.tempItems = [];
 		this.tempUsers = [];
+		this.currentUser = false;
 		this.filterParams = {};
 		this.path = {
 			items: 'json/listitems.json',
@@ -183,5 +184,29 @@ class Storage {
 			break;
 			default: console.log('default'); return arr;
 		}
+	}
+
+	//add user who is logined to LocalStorage
+	addLoginedUsertoLocalStorage(user){
+		localStorage.setItem('activeUser', JSON.stringify(user));
+	}
+
+	removeLoginedUserFromLocalStorage(){
+		localStorage.removeItem('activeUser');
+	}
+
+	getLoginedUserFromTempStorage(){
+		let loginedUser = JSON.parse(localStorage.getItem('activeUser'));
+		if (loginedUser){
+			return this.tempUsers.find(user => user.login === loginedUser.login);
+		} else {
+			return null;
+		}
+	}
+
+	addNewUsertoTempStorage(data){
+		this.tempUsers.push(data);
+		console.dir(this.tempUsers);
+		this.saveToLocalStorage('users', this.tempUsers);
 	}
 }

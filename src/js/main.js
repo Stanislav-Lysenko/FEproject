@@ -15,4 +15,6 @@
 //= app/manager.js
 //= app/init.js
 //= app/signin.js
+//= app/registration.js
+//= app/item.js
 

@@ -1,18 +1,22 @@
 class Manager {
-	constructor({user = {}} = {}){
+	constructor(){
 		this.storage = new Storage();
 		this.regExpId = /^\/item\d+$/i;
 		this.regSearch = /^\/search$/i;
 		this.params = {};
-		this.user = user;
 		this.init();
+		console.log('manager init');
 	}
 	async init() {
 		await this.storage.init();
-		console.dir(this.user);
+		this.getLoginedUser();
 		this.getPath();
 		this.getSearchParams()
 		this.onloadPage();
+	}
+
+	getLoginedUser() {
+		this.loginedUser = this.storage.getLoginedUserFromTempStorage();
 	}
 
 	async renderContactsPage() {
@@ -21,8 +25,23 @@ class Manager {
 		renderHTML(data, document.getElementsByClassName('main__container')[0]);
 	}
 
-	renderRegisterPage() {
+	async renderRegistration() {
+		let response = await fetch('json/page-registration.json');
+		let data = await response.json();
+		renderHTML(data, document.getElementsByClassName('main__container')[0]);
+	}
 
+	async renderHeader() {
+		if (this.loginedUser){
+			let response = await fetch('json/page-nav-left-auth.json');
+			let data = await response.json();
+			renderHTML(data, document.getElementsByClassName('nav__left')[0]);
+			document.getElementsByClassName('nav__user-name')[0].append(document.createTextNode(this.loginedUser.name));
+		} else {
+			let response = await fetch('json/page-nav-left-unauth.json');
+			let data = await response.json();
+			renderHTML(data, document.getElementsByClassName('nav__left')[0]);
+		}
 	}
 
 	async renderAdvert() {
@@ -96,9 +115,11 @@ class Manager {
 
 	async onloadPage() {
 		this.parseSearchParams();
+		await this.renderHeader();
 		//render item by id
 		if (this.currentPathName.match(this.regExpId)){
-			this.renderItemPage(this.storage.getItemById(this.getItemIdfromPath()))
+			this.renderItemPage(this.storage.getItemById(this.getItemIdfromPath()));
+			return;
 		} //render by user filter and request
 		if (this.currentPathName.match(this.regSearch)){
 			console.log('render by params');
@@ -108,11 +129,12 @@ class Manager {
 		} else {
 			switch (this.currentPathName) {
 				case '/register':
-				console.log('register');
+					await this.renderRegistration();
+					this.registration = new Registration(this.storage.getTempStorage('users'));
 				break;
 				case '/sign':
-				await this.renderSignin();
-				this.signin = new Signin(this.storage.getTempStorage('users'));
+					await this.renderSignin();
+					this.signin = new Signin(this.storage.getTempStorage('users'));
 				break;
 				case '/contacts':
 				this.renderContactsPage();
@@ -121,6 +143,10 @@ class Manager {
 				case '/advert':
 				this.renderAdvert();
 				this.filter = new Filter();
+				break;
+				case '/logout':
+					this.storage.removeLoginedUserFromLocalStorage();
+					location.assign('/');
 				break;
 				case '/':
 				await this.renderMainPage();

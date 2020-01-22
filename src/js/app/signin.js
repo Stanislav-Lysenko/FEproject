@@ -1,12 +1,14 @@
 class Signin{
 	constructor(users){
+		this.storage = new Storage();
 		this.users = users;
 		this.emailRegExp = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/i;
 		this.passRegExp = /^\w{6,}$/;
 		this.init();
 	}
 
-	init(){
+	async init(){
+		await this.storage.init();
 		this.findNodes();
 		this.bindAll();
 		this.addEvents();
@@ -56,8 +58,15 @@ class Signin{
 		if (!user) {
 			this.createWarningMessage('unknownuser');
 		} else {
+			this.successLogin(user);
+			//console.dir(this.storage.getLoginedUserFromLocalStorage());
 			location.assign('/');
 		}
+	}
+
+	// add user logined user to LocalStorage
+	successLogin(user) {
+		this.storage.addLoginedUsertoLocalStorage(user);
 	}
 
 	createWarningMessage(errorname){

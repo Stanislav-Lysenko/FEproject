@@ -563,6 +563,42 @@ a {
   font-size: 2em;
   color: #dd1e31; }
 
+.registration {
+  padding: 4em 0;
+  -webkit-box-flex: 0;
+  flex: 0 0 25%; }
+
+.registration__title {
+  font-size: 4em;
+  text-align: center;
+  color: #000000;
+  padding-bottom: 0.5em; }
+
+.registration__form {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column; }
+
+.registration__input {
+  display: block;
+  font-size: 1.3em;
+  height: 3.077em;
+  width: 100%;
+  padding: 0.769em;
+  outline: none;
+  color: #000000;
+  border: 1px solid #ebebeb;
+  margin: 1.538em 0; }
+
+.registration__btn {
+  margin: 1.538em 0; }
+
+.registration__warning {
+  font-size: 2em;
+  color: #dd1e31; }
+
 .nav {
   display: -webkit-box;
   display: flex;

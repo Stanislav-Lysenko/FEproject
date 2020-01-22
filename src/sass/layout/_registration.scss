@@ -1,0 +1,37 @@
+.registration {
+	padding: 4em 0;
+	flex: 0 0 25%;
+}
+
+.registration__title {
+	font-size: 4em;
+	text-align: center;
+	color: $main-text-color;
+	padding-bottom: 0.5em;
+}
+.registration__form {
+	display: flex;
+	flex-direction: column;
+}
+
+
+.registration__input {
+	display: block;
+	font-size: 1.3em;
+	height: 3.077em;
+	width: 100%;
+	padding: 0.769em;
+	outline: none;
+	color: #000000;
+	border: 1px solid #ebebeb;
+	margin: 1.538em 0;
+}
+
+.registration__btn {
+	margin: 1.538em 0;
+}
+
+.registration__warning {
+	font-size: 2em;
+	color: $warning-color;
+}

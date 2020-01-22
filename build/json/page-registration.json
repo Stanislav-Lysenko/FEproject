@@ -1,13 +1,13 @@
 [
 	{"tag":"div","class":"registration","children":[
-		{"tag":"h2","class":"registration__title","html":"Sign in"},
-		{"tag":"form","class":"registration__form","name":"signin","action":"#","method":"POST","target":"_self","html":"", "children":
+		{"tag":"h2","class":"registration__title","html":"Registration"},
+		{"tag":"form","class":"registration__form","name":"registration","action":"#","method":"POST","target":"_self","html":"", "children":
 			[
 				{"tag":"input","class":"registration__input","name":"email","type":"email","placeholder":"Your mail","autocomplete":"on","required":"","html":""},
-				{"tag":"input","class":"registration__input","name":"pass","type":"text","placeholder":"Your name","required":"","html":""},
+				{"tag":"input","class":"registration__input","name":"name","type":"text","placeholder":"Your name","required":"","html":""},
 				{"tag":"input","class":"registration__input","name":"pass","type":"password","placeholder":"Your password","autocomplete":"on","required":"","html":""},
 				{"tag":"input","class":"registration__input","name":"pass","type":"password","placeholder":"Your password","autocomplete":"on","required":"","html":""},
-				{"tag":"input","class":"registration__btn btn btn_small","name":"submit","type":"submit","value":"Sign in","html":""}
+				{"tag":"input","class":"registration__btn btn btn_small","name":"submit","type":"submit","value":"Send","html":""}
 			]
 		},
 		{"tag":"div","class":"registration__warning","html":""}
