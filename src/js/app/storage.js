@@ -81,19 +81,22 @@ class Storage {
 	getFilteredItems(params){
 		this.filterParams = params;
 		console.dir(this.filterParams);
-		let filterArrItems = this.getItemsByCondition();
+		let filterArrItems = this.getItemsByAvailable();
+		filterArrItems = this.getItemsByCondition(filterArrItems);
 		filterArrItems = this.getItemsByShipping(filterArrItems);
 		filterArrItems = this.getItemsByFormat(filterArrItems);
 		filterArrItems = this.getItemsByPrice(filterArrItems);
 		filterArrItems = this.getItemsByUserRequest(filterArrItems);
 		filterArrItems - this.sortByDirection(filterArrItems)
-		console.dir(filterArrItems);
 		return filterArrItems;
-
 	}
 
 	makeArray(str) {
 		return str.split(',');
+	}
+
+	getItemsByAvailable() {
+		return this.tempItems.filter(item => item.reserved == false);
 	}
 
 	sortByDirection(arr) {
@@ -109,7 +112,6 @@ class Storage {
 			}
 		}
 		return arr.sort(this.comparePriceToHigh);
-
 	}
 
 	getItemsByUserRequest(arr){
@@ -135,17 +137,17 @@ class Storage {
 		return arr;
 	}
 
-	getItemsByCondition(){
+	getItemsByCondition(arr){
 		if (this.filterParams['condition']){
 			let arrParams = this.makeArray(this.filterParams['condition']);
 			if (arrParams.length == 2) {
-				return this.tempItems.filter(item => {return item.condition == arrParams[0] || item.condition == arrParams[1]})
+				return arr.filter(item => {return item.condition == arrParams[0] || item.condition == arrParams[1]})
 			}
 			if (arrParams.length == 1) {
-				return this.tempItems.filter(item => item.condition == arrParams[0]);
+				return arr.filter(item => item.condition == arrParams[0]);
 			}
 		}
-		return this.tempItems;
+		return arr;
 	}
 
 	replaceShippingParams(arr){

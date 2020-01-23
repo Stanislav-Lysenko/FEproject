@@ -149,9 +149,13 @@ class Manager {
 					this.storage.removeLoginedUserFromLocalStorage();
 					location.assign('/');
 				break;
+				case '/sell':
+					console.log('sell')
+				break;
 				case '/':
 				await this.renderMainPage();
-				this.renderResult(this.storage.getTempStorage('items'));
+				// this.renderResult(this.storage.getTempStorage('items'));
+				this.renderResult(this.storage.getItemsByAvailable())
 				this.filter = new Filter({option: 'all'})
 				break;
 				default: console.log('page not found');

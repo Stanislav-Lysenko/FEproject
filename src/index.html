@@ -64,7 +64,7 @@
 						<div class="item-page__bid-container">
 							<span class="item-page__start-bid">Starting bids:</span>
 							<span class="item-page__start-bid-price">{{=price}}</span>
-							<p class="item-page_bids-value">{{=bids}}<span class="item-page_bids">bids</span></p>
+							<p><span class="item-page_bids-value">{{=bids}}</span><span class="item-page_bids">bids</span></p>
 						</div>
 						<div class="item-page__date-container">
 							<span class="item-page__date">Expiration date:</span>
@@ -72,15 +72,14 @@
 						</div>
 						<div class="item-page__bid-container">
 							<input  class="item-page__start-bid-input" type="text" size="11" maxlenght="10" autocoplete="off" name="maxbid">
-							<button class="item-page__btn-bid btn">Place bid</button>
-
+							<input class="item-page__btn-bid btn" type="submit" value="Place bid">
 						</div>
 						{{ } }}
 						{{ if (buy) { }}
 						<div class="item-page__price-container">
 							<span class="item-page__price">Price:</span>
 							<span class="item-page__price-value">{{=price}}</span>
-							<button class="item-page-buy btn">Buy it now</button>
+							<input class="item-page-buy btn" type="submit" value="Buy it now">
 						</div>
 						{{ } }}
 					</div>
@@ -99,7 +98,7 @@
 					<li class="nav__item"><a href="/advert" class="nav__link">Advertising</a></li> -->
 				</ul>
 				<ul class="nav__right">
-					<li class="nav__item"><a href="" class="nav__link">My Letitbuy</a></li>
+					<li class="nav__item"><a href="/sell" class="nav__link">Sell</a></li>
 					<li class="nav__item nav__item_sub-parent"><a href="" class="nav__link nav__link_par">Watch list</a>
 						<ul class="nav__sub">
 							<li class="nav__item nav__item_sub"><a class="nav__link" href="">Messages</a></li>
