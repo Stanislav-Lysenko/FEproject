@@ -119,6 +119,7 @@ class Manager {
 		//render item by id
 		if (this.currentPathName.match(this.regExpId)){
 			this.renderItemPage(this.storage.getItemById(this.getItemIdfromPath()));
+			this.item = new Item(this.storage.getItemById(this.getItemIdfromPath()));
 			return;
 		} //render by user filter and request
 		if (this.currentPathName.match(this.regSearch)){

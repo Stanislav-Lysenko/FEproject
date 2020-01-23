@@ -46,6 +46,12 @@ class Storage {
 		}
 	}
 
+	updateAllLocalStorage(){
+		this.saveToLocalStorage('users', this.tempUsers);
+		this.saveToLocalStorage('items', this.tempItems);
+
+	}
+
 	saveToLocalStorage(key, data) {
 		localStorage.setItem(key, JSON.stringify(data));
 	}
