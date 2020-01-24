@@ -4,7 +4,7 @@ class Storage {
 	constructor(){
 		this.tempItems = [];
 		this.tempUsers = [];
-		this.currentUser = false;
+		this.tempBoughtItems = [];
 		this.filterParams = {};
 		this.path = {
 			items: 'json/listitems.json',
@@ -216,5 +216,15 @@ class Storage {
 		this.tempUsers.push(data);
 		console.dir(this.tempUsers);
 		this.saveToLocalStorage('users', this.tempUsers);
+	}
+
+	getBoughtItemsByUser(){
+		let loginedUser = this.getLoginedUserFromTempStorage();
+		for (let i = 0; i< loginedUser.buyitems.length; i++){
+			console.log(loginedUser.buyitems[i]);
+			this.tempBoughtItems.push(this.getItemById(loginedUser.buyitems[i].item))
+		}
+		console.dir(this.tempBoughtItems);
+		return this.tempBoughtItems;
 	}
 }

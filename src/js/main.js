@@ -17,4 +17,5 @@
 //= app/signin.js
 //= app/registration.js
 //= app/item.js
+//= app/slider.js
 

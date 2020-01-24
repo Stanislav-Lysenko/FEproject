@@ -1066,4 +1066,35 @@ a {
   justify-content: space-around;
   padding: 2em; }
 
+.main__slider-container {
+  width: 960px;
+  margin: 0 auto;
+  padding-top: 4em; }
+
+.slider {
+  height: 200px;
+  width: 960px;
+  box-sizing: content-box; }
+
+.slider__screen {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden; }
+
+.slider__lens {
+  height: 100%;
+  -webkit-transition: all .0s ease-in-out;
+  transition: all .0s ease-in-out; }
+
+.slider__lens_transition {
+  -webkit-transition: all .9s ease-in-out;
+  transition: all .9s ease-in-out; }
+
+.slider__item {
+  height: 200px;
+  width: 960px;
+  float: left;
+  cursor: pointer; }
+
 /*# sourceMappingURL=style.css.map */

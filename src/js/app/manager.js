@@ -73,6 +73,15 @@ class Manager {
 		document.getElementsByClassName('item-page__list-images')[0].innerHTML = resultUL;
 	}
 
+	renderHistory(arr){
+		let templateContent = document.getElementById("item");
+		let template = _.template(templateContent.innerHTML);
+		let result = arr.reduce(function(sum, current) {
+			return  template(current) + sum;
+		}.bind(this),"");
+		document.getElementsByClassName("main__container")[0].innerHTML = result;
+	}
+
 	async renderMainPage() {
 		let data = await getJSON('json/page-aside-result.json');
 		renderHTML(data, document.getElementsByClassName('main__container')[0]);
@@ -149,8 +158,12 @@ class Manager {
 					this.storage.removeLoginedUserFromLocalStorage();
 					location.assign('/');
 				break;
-				case '/sell':
-					console.log('sell')
+				case '/history':
+					if (this.storage.getLoginedUserFromTempStorage()){
+						this.renderHistory(this.storage.getBoughtItemsByUser());
+					}else {
+						location.assign('/sign');
+					}
 				break;
 				case '/':
 				await this.renderMainPage();

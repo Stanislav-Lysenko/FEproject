@@ -57,7 +57,7 @@ class Item {
 				//save id of item to user
 				for (let i =0; i < this.storage.tempUsers.length; i++){
 					if (this.storage.tempUsers[i].login == user.login){
-						this.storage.tempUsers[i].buyitems.push(this.item.id_item);
+						this.storage.tempUsers[i].buyitems.push({"item": this.item.id_item});
 					}
 				}
 				// reserve item
@@ -66,8 +66,6 @@ class Item {
 						this.storage.tempItems[i].reserved = true;
 					}
 				}
-				console.dir(	this.storage.tempUsers);
-				console.dir(	this.storage.tempItems);
 				this.storage.updateAllLocalStorage();
 				location.assign(`/item${this.item.id_item}`);
 			} else {
