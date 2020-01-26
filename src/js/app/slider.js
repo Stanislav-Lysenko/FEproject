@@ -5,7 +5,6 @@ function Slider (elem, config) {
 	//Read configuration
 	this.direction = config.direction || 'forward'; // лево - назад, вправао - вперед
 	this.autoDuration = config.autoDuration || 3000;
-console.dir(this);
 	this.init();
 }
 
@@ -34,7 +33,6 @@ var Slider2 = new Slider1.Constructor(document.getElementsByClassName('slider')[
 
 	prepareDomSlider: function() {
 			this._slideWidth = this.slides[0].offsetWidth;
-			console.log(this.slides[0].offsetWidth);
 			this._lensWidth = (this.slides.length + 2)*this.slides[0].offsetWidth + "px";
 			this.lens.style.width = this._lensWidth;
 

@@ -1,0 +1,53 @@
+.sell {
+	padding: 4em 0;
+	flex: 0 0 40%;
+}
+
+.sell__title {
+	font-size: 4em;
+	text-align: center;
+	color: $main-text-color;
+	padding-bottom: 0.5em;
+}
+.sell__form {
+	display: flex;
+	flex-direction: column;
+}
+
+
+.sell__input {
+	display: block;
+	font-size: 1.3em;
+	height: 3.077em;
+	width: 100%;
+	padding: 0.769em;
+	outline: none;
+	color: $main-text-color;
+	border: 1px solid #ebebeb;
+	margin: 1.538em 0;
+}
+
+.sell__select{
+	display: block;
+	font-size: 1.3em;
+	height: 3.077em;
+	width: 100%;
+	padding: 0.769em;
+	outline: none;
+	letter-spacing: 0.1em;
+	border: 1px solid #cccccc;
+	color: $link-subtext-color;
+	margin: 1.538em 0;
+}
+
+.sell__select option {
+	color: $link-subtext-color;
+}
+
+.sell__btn {
+	width: 16em;
+	outline: none;
+	font-size: 1.3em;
+	margin: 1.538em 0;
+	color: $link-subtext-color;
+}

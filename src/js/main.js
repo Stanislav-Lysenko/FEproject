@@ -1,11 +1,4 @@
 /*
- * Third party
- */
-//= ../../external/underscore-min.js
-
-
-
-/*
  * Custom
  */
 //= app/renderFromJson.js
@@ -17,5 +10,6 @@
 //= app/signin.js
 //= app/registration.js
 //= app/item.js
+//= app/sell.js
 //= app/slider.js
 

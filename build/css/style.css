@@ -599,6 +599,57 @@ a {
   font-size: 2em;
   color: #dd1e31; }
 
+.sell {
+  padding: 4em 0;
+  -webkit-box-flex: 0;
+  flex: 0 0 40%; }
+
+.sell__title {
+  font-size: 4em;
+  text-align: center;
+  color: #000000;
+  padding-bottom: 0.5em; }
+
+.sell__form {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column; }
+
+.sell__input {
+  display: block;
+  font-size: 1.3em;
+  height: 3.077em;
+  width: 100%;
+  padding: 0.769em;
+  outline: none;
+  color: #000000;
+  border: 1px solid #ebebeb;
+  margin: 1.538em 0; }
+
+.sell__select {
+  display: block;
+  font-size: 1.3em;
+  height: 3.077em;
+  width: 100%;
+  padding: 0.769em;
+  outline: none;
+  letter-spacing: 0.1em;
+  border: 1px solid #cccccc;
+  color: #767676;
+  margin: 1.538em 0; }
+
+.sell__select option {
+  color: #767676; }
+
+.sell__btn {
+  width: 16em;
+  outline: none;
+  font-size: 1.3em;
+  margin: 1.538em 0;
+  color: #767676; }
+
 .nav {
   display: -webkit-box;
   display: flex;

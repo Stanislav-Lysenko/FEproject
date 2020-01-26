@@ -4,7 +4,6 @@ class Item {
 		this.nodes = {};
 		this.bidRegExp = /\d+/i;
 		this.item = item;
-		console.dir(item);
 		this.init();
 	}
 

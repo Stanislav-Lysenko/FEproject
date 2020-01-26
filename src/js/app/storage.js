@@ -49,8 +49,8 @@ class Storage {
 	updateAllLocalStorage(){
 		this.saveToLocalStorage('users', this.tempUsers);
 		this.saveToLocalStorage('items', this.tempItems);
-
 	}
+
 
 	saveToLocalStorage(key, data) {
 		localStorage.setItem(key, JSON.stringify(data));
@@ -194,6 +194,7 @@ class Storage {
 		}
 	}
 
+
 	//add user who is logined to LocalStorage
 	addLoginedUsertoLocalStorage(user){
 		localStorage.setItem('activeUser', JSON.stringify(user));
@@ -212,6 +213,11 @@ class Storage {
 		}
 	}
 
+	addNewItemToTempStorage(data){
+		this.tempItems.push(data);
+		console.dir(this.tempItems);
+		this.saveToLocalStorage('items', this.tempItems);
+	}
 	addNewUsertoTempStorage(data){
 		this.tempUsers.push(data);
 		console.dir(this.tempUsers);
@@ -226,5 +232,9 @@ class Storage {
 		}
 		console.dir(this.tempBoughtItems);
 		return this.tempBoughtItems;
+	}
+	generateNewId(){
+		console.dir(this.tempItems[9]);
+		return +this.tempItems[this.tempItems.length-1]['id_item'] + 1 + '';
 	}
 }

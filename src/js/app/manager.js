@@ -93,6 +93,12 @@ class Manager {
 		renderHTML(data, document.getElementsByClassName('main__container')[0]);
 	}
 
+	async renderSell() {
+		let response = await fetch('json/page-sell.json');
+		let data = await response.json();
+		renderHTML(data, document.getElementsByClassName('main__container')[0]);
+	}
+
 	getPath() {
 		this.currentPathName = window.location.pathname;
 	}
@@ -161,6 +167,14 @@ class Manager {
 				case '/history':
 					if (this.storage.getLoginedUserFromTempStorage()){
 						this.renderHistory(this.storage.getBoughtItemsByUser());
+					}else {
+						location.assign('/sign');
+					}
+				break;
+				case '/sell':
+					if (this.storage.getLoginedUserFromTempStorage()){
+						await this.renderSell();
+						this.sell = new Sell(this.storage.getLoginedUserFromTempStorage());
 					}else {
 						location.assign('/sign');
 					}

@@ -1,0 +1,29 @@
+[
+{"tag":"div","class":"sell","children":[
+	{"tag":"h2","class":"sell__title","html":"Sell your item"},
+	{"tag":"div","class":"sell__form","name":"sell","target":"_self","children":[
+			{"tag":"input","class":"sell__input","type":"text","name":"title","placeholder":"Enter title","required":"","html":""},
+			{"tag":"input","class":"sell__input","type":"text","name":"subtitle","placeholder":"Enter subtitle","required":"","html":""},
+			{"tag":"select","class":"sell__select","name":"condition","children":[
+					{"tag":"option","value":"new","html":"new"},
+					{"tag":"option","value":"used","html":"used"}
+				]},
+			{"tag":"input","class":"sell__btn","type":"file","name":"previmg","value":"Main photo","required":"","html":""},
+			{"tag":"input","class":"sell__input","type":"text","name":"price","placeholder":"Enter price","required":"","html":""},
+			{"tag":"select","class":"sell__select","name":"format","children":[
+					{"tag":"option","value":"buyitnow","html":"Buy it now"},
+					{"tag":"option","value":"auction","html":"Auction"}
+				]},
+			{"tag":"input","class":"sell__input","type":"date","name":"dateExp","placeholder":"Enter Date exp","required":"","html":""},
+			{"tag":"input","class":"sell__input","type":"text","name":"country","placeholder":"Entry country","required":"","html":""},
+			{"tag":"select","class":"sell__select", "name":"shipping","children":[
+					{"tag":"option","value":"Free Shipping","html":"Free Shipping"},
+					{"tag":"option","value":"Free In-store Pickup","html":"Free In-store Pickup"},
+					{"tag":"option","value":"Free Local Pickup","html":"Free Local Pickup"}
+				]},
+			{"tag":"input","class":"sell__btn","type":"file","name":"pictures","multiple":"multiple","value":"add 3 pics","required":"","html":""},
+			{"tag":"input","class":"sell__btn btn btn_small","name":"submit","type":"submit","value":"Sell","required":"","html":""}
+	]},
+	{"tag":"div","class":"sell__warning","html":""}
+]}
+]

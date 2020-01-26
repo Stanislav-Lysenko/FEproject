@@ -18,6 +18,7 @@ var path = {
 		img: 'build/img/',
 		webfonts: 'build/webfonts/',
 		js: 'build/js/',
+		external: 'build/external/',
 		json: 'build/json/'
 	},
 	src: {
@@ -25,6 +26,7 @@ var path = {
 		style: 'src/sass/style.scss',
 		img: 'src/img/*.*',
 		js: 'src/js/main.js',
+		external: 'src/external/*.*',
 		json: 'src/json/*.json'
 	},
 	watch: {
@@ -68,6 +70,11 @@ gulp.task('build:js', () =>
 		.pipe(gulp.dest(path.build.js))
 )
 
+gulp.task('external:lib', () =>
+		gulp.src(path.src.external)
+			.pipe(gulp.dest(path.build.external))
+)
+
 gulp.task('build:json', () =>
 	gulp.src(path.src.json)
 		.pipe(gulp.dest(path.build.json))
@@ -97,4 +104,4 @@ gulp.task('watch', () => {
 	gulp.watch(path.watch.img, gulp.parallel('build:img'));
 });
 
-gulp.task( 'default', gulp.series( 'clean:build', 'build:html', 'build:css', 'build:json', 'build:img', 'build:js', gulp.parallel('watch')));
+gulp.task( 'default', gulp.series( 'clean:build', 'external:lib','build:html', 'build:css', 'build:json', 'build:img', 'build:js', gulp.parallel('watch')));
