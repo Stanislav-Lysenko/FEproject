@@ -1,5 +1,15 @@
-.aside {
-	flex: 0 0 20%;
-	height: auto;
-	overflow: visible;
+@media screen and (min-width: 769px){
+	.aside {
+		flex: 0 0 20%;
+		height: auto;
+		overflow: visible;
+	}
+}
+
+@media screen and (max-width: 768px){
+	.aside {
+		flex: 0 0 30%;
+		height: auto;
+		overflow: visible;
+	}
 }

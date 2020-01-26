@@ -1,6 +1,24 @@
 .signin {
 	padding: 4em 0;
-	flex: 0 0 25%;
+	margin: 0 auto;
+}
+
+@media screen and (min-width: 769px){
+	.signin {
+		flex: 0 0 40%;
+	}
+}
+
+@media screen and (max-width: 768px){
+	.signin {
+		flex: 0 0 50%;
+	}
+}
+
+@media screen and (max-width: 480px){
+	.signin {
+		flex: 0 0 90%;
+	}
 }
 
 .signin__title {

@@ -1,20 +1,8 @@
-.nav {
-	display: flex;
-	font-size: 1.6em;
-	justify-content: space-between;
-	color: $main-text-color;
-}
-
-.nav__left {
-	display: flex;
-}
-
-.nav__right {
-	display: flex;
-}
-
-.nav__item {
-	position: relative;
+.nav__hamburger {
+	position: absolute;
+	right: 0;
+	top: 5px;
+	width: 40px;
 }
 
 .nav__link {
@@ -24,80 +12,147 @@
 	}
 }
 
-.nav__item > .nav__sub {
-	position: absolute;
-	box-sizing: content-box;
-	width: 200%;
-	left: 0;
-	top: 1.6em;
-	padding-right: 5rem;
-	background-color: $bg-main-color;
-	box-shadow: 2px 2px 2px 2px rgba(245,245,245,1);
-	z-index: 10;
-	transform: scaleY(0);
-	transition: all .3s linear;
-	transform-origin: 0 0;
+@media screen and (min-width: 769px){
+	.nav {
+		position: relative;
+		display: flex;
+		font-size: 1.6em;
+		justify-content: space-between;
+		color: $main-text-color;
+	}
+
+	.nav__left {
+		display: flex;
+	}
+
+	.nav__right {
+		display: flex;
+	}
+
+	.nav__item {
+		position: relative;
+	}
+
+
+	.nav__item > .nav__sub {
+		position: absolute;
+		box-sizing: content-box;
+		width: 200%;
+		left: 0;
+		top: 1.6em;
+		padding-right: 5rem;
+		background-color: $bg-main-color;
+		box-shadow: 2px 2px 2px 2px rgba(245,245,245,1);
+		z-index: 10;
+		transform: scaleY(0);
+		transition: all .3s linear;
+		transform-origin: 0 0;
+	}
+
+	.nav__item:hover > .nav__sub {
+		transform: scaleY(1);
+	}
+
+	.nav__left > .nav__item:nth-last-child(n+2)::after,
+	.nav__right > .nav__item:nth-last-child(n+2)::after{
+		content: "|";
+		display: inline-block;
+		padding: 0 0.8em;
+		color: $bg-second-color;
+	}
+
+	.nav__item_sub-parent::before {
+		content: "\2304";
+		content: "\2304";
+		position: absolute;
+		top: 50%;
+		right: 1.2em;
+		transform: translateY(-80%);
+	}
+
+	.nav__item_sub-parent:hover::before {
+		color: $link-text-color;
+	}
+
+
+	.nav__item_sub {
+		width: 100%;
+		text-align: center;
+		text-align: left;
+		padding: 0.5rem;
+	}
+
+	.nav__item_sub .nav__link {
+		color: $link-subtext-color;
+	}
+
+	.nav__item_sub .nav__link:hover {
+		color: $link-subtext-color;
+	}
+
+	.nav__item_sub:hover .nav__link {
+		border-bottom: 1px solid $link-subtext-color;
+	}
+
+	.nav__left .nav__link:hover {
+		border-bottom: 1px solid $link-text-color;
+	}
+
+	.nav__link:hover {
+		color: $link-text-color;
+	}
+
+	.nav__left .nav__link_colored:hover {
+		border-bottom: 1px solid $link-text-color;
+	}
 }
 
-.nav__item:hover > .nav__sub {
-	transform: scaleY(1);
+@media screen and (max-width: 768px) {
+	.nav {
+		position: relative;
+		width: 100%;
+		font-size: 1.6em;
+		color: $main-text-color;
+		z-index: 1;
+		padding-top: 3em;
+	}
+	.nav__left, .nav__right {
+		background-color: $bg-second-color;
+	}
+	.nav__item {
+		position: relative;
+		display: block;
+		padding: 0.2em 0;
+		border-bottom: 1px dotted $bg-main-color;
+	}
+
+	.nav__link {
+		padding: 0 1em;
+	}
+
+	.nav__item:hover, .nan__item:focus {
+		background-color: $bg-main-color;
+		cursor: pointer;
+	}
+	.nav__sub {
+		position: absolute;
+		padding: 0.2em 0;
+		overflow: hidden;
+		transform: scaleY(0);
+		transition: all 0.1s linear;
+		transform-origin: 0 0 ;
+	}
+
+	.nav__item_sub-parent:hover .nav__sub {
+		position: relative;
+		transform: scaleY(1);
+		background-attachment: fixed;
+		transition: all 0.3s linear;
+	}
+	.nav__item_sub-parent:hover .nav__item_sub {
+		background-color: $bg-second-color;
+	}
 }
-
-.nav__left > .nav__item:nth-last-child(n+2)::after,
-.nav__right > .nav__item:nth-last-child(n+2)::after{
-	content: "|";
-	display: inline-block;
-	padding: 0 0.8em;
-	color: $bg-second-color;
-}
-
-.nav__item_sub-parent::before {
-	content: "\2304";
-	content: "\2304";
-	position: absolute;
-	top: 50%;
-	right: 1.2em;
-	transform: translateY(-80%);
-}
-
-.nav__item_sub-parent:hover::before {
-	color: $link-text-color;
-}
-
-
-.nav__item_sub {
-	width: 100%;
-	text-align: center;
-	text-align: left;
-	padding: 0.5rem;
-}
-
-.nav__item_sub .nav__link {
-	color: $link-subtext-color;
-}
-
-.nav__item_sub .nav__link:hover {
-	color: $link-subtext-color;
-}
-
-.nav__item_sub:hover .nav__link {
-	border-bottom: 1px solid $link-subtext-color;
-}
-
-.nav__left .nav__link:hover {
-	border-bottom: 1px solid $link-text-color;
-}
-
-.nav__link:hover {
-	color: $link-text-color;
-}
-
-.nav__left .nav__link_colored:hover {
-	border-bottom: 1px solid $link-text-color;
-}
-
-
-
 
 
 

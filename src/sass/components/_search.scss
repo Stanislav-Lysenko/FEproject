@@ -4,12 +4,32 @@
 	justify-content: space-between;
 }
 
+@media screen and (min-width: 769px){
+	.search__input{
+		flex: 0 1 80%;
+		padding-left: 0.4em;
+	}
+
+	.serach__btn-submit{
+		width: 9em;
+	}
+}
+
+@media screen and (max-width: 768px){
+	.search__input{
+		flex: 0 1 70%;
+		padding-left: 0.4em;
+	}
+
+	.serach__btn-submit{
+		flex: 0 1 28%;
+	}
+}
+
 .search__input {
 	height: 100%;
-	flex: 0 1 80%;
 	outline: none;
 	font-size: 1.6em;
-	padding-left: 0.4em;
 	border: 1px solid $bg-ternary-color;
 	color: $main-text-color;
 }
@@ -25,7 +45,6 @@
 
 .serach__btn-submit {
 	flex-shrink: 0;
-	width: 9em;
 	background-color: $link-text-color;
 	outline: 0;
 	border: 0;

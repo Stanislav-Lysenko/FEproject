@@ -1,6 +1,24 @@
+@media screen and (min-width: 769px){
+	.sell {
+		flex: 0 0 40%;
+	}
+}
+
+@media screen and (max-width: 768px){
+	.sell {
+		flex: 0 0 50%;
+	}
+}
+
+@media screen and (max-width: 480px){
+	.sell {
+		flex: 0 0 90%;
+	}
+}
+
 .sell {
 	padding: 4em 0;
-	flex: 0 0 40%;
+	margin: 0 auto;
 }
 
 .sell__title {
@@ -50,4 +68,9 @@
 	font-size: 1.3em;
 	margin: 1.538em 0;
 	color: $link-subtext-color;
+}
+
+.sell__warning{
+	font-size: 2em;
+	color: $warning-color;
 }

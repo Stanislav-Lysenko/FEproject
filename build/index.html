@@ -133,16 +133,15 @@
 		</div>
 	</template>
 
-
-
 	<header class="header">
 		<div class="header__top-bg"></div>
 		<div class="header__container">
 			<nav class="header__nav nav">
+					<input id="hamburger" class="nav__hamburger hamburger" type="checkbox">
+					<label for="hamburger" class="nav__hamburger-toggle hamburger__toggle">
+						<span></span>
+					</label>
 				<ul class="nav__left">
-					<!-- <li class="nav__item"><a href="/sign" class="nav__link nav__link_colored">Sign in</a><span> or </span><a class="nav__link nav__link_colored" href="/register">Register</a></li>
-						<li class="nav__item"><a href="/contacts" class="nav__link">Contacts & Contacts</a></li>
-						<li class="nav__item"><a href="/advert" class="nav__link">Advertising</a></li> -->
 					</ul>
 					<ul class="nav__right">
 						<li class="nav__item"><a href="/sell" class="nav__link">Sell</a></li>
@@ -183,97 +182,6 @@
 				</div>
 			</div>
 			<div class="main__container">
-				<!-- <div class="sell">
-					<h2 class="sell_title">Sell your item</h2>
-					<form class="sell__form" action="#" method="POST" target="_self">
-						<input class="sell__input" type="text" name="title" placeholder="Enter title" required>
-						<input class="sell__input" type="text" name="subtitle" placeholder="Enter subtitle" required>
-						<select  class="sell__select" name="condition">
-							<option value="new">new</option>
-							<option value="used">used</option>
-						</select>
-						<input class="sell__btn btn btn_small" type="file" name="previmg" value="Main photo">
-						<input class="sell__input" type="text" name="price" placeholder="Enter price">
-						<select class="sell__select" name="format">
-							<option value="buyitnow">Buy it now</option>
-							<option value="auction">Auction</option>
-						</select>
-						<input class="sell__input" type="date" name="dataExp" placeholder="Date exp">
-						<input class="sell__input" type="text" name="country">
-						<section name="shipping">
-							<option value="Free Shipping">Free Shipping</option>
-							<option value="Free In-store Pickup">Free In-store Pickup</option>
-							<option value="Free Local Pickup">Free Local Pickup</option>
-						</section>
-						<input class="sell__btn btn btn_small" type="file" name="pictures[]" value="add 3 pics">
-						<input class="sell__btn btn btn_small" type="submit" value="Sell">
-					</form>
-				</div> -->
-				<!-- <aside class="aside">
-					<div class="filter">
-						<ul class="filter__list">
-							<li class="filter__option">
-								<div class="filter__name">Condition</div>
-								<label class="checkbox">
-									<input id="condition-new" class="checkbox__input" type="checkbox" name="condition1" value="new">
-									<span class="checkbox__text">New</span>
-								</label>
-								<label class="checkbox">
-									<input id="condition-used" class="checkbox__input" type="checkbox" name="condition2" value="used">
-									<span class="checkbox__text">Used</span>
-								</label>
-								<label class="checkbox">
-									<input class="checkbox__input" type="checkbox" name="condition3" value="any">
-									<span class="checkbox__text">Any condition</span>
-								</label>
-							</li>
-							<li class="filter__option">
-								<div class="filter__name">Delivery Options</div>
-								<label class="checkbox">
-									<input id="shipping-free" class="checkbox__input" type="checkbox" name="shipping-free" value="free">
-									<span class="checkbox__text">Free Shipping</span>
-								</label>
-								<label class="checkbox">
-									<input id="shipping-instore" class="checkbox__input" type="checkbox" name="shipping-instore" value="instore">
-									<span class="checkbox__text">Free In-store Pickup</span>
-								</label>
-								<label class="checkbox">
-									<input id="shipping-local" class="checkbox__input" type="checkbox" name="shipping-local" value="local">
-									<span class="checkbox__text">Free Local Pickup</span>
-								</label>
-							</li>
-							<li class="filter__option">
-								<div class="filter__name">Price</div>
-								<div class="price__container">
-									<span  class="price__currency">$</span><input id="from" class="price__input" pattern="\d*" size="3" maxlength="6" type="text" name="from" autocomplete="off">
-									<span  class="price__currency">-$</span><input id="to" class="price__input" pattern="\d*" size="3" maxlength="6" type="text" name="to" autocomplete="off">
-									<button id="btnfromto" class="price__btn">&#129106;</button>
-								</div>
-							</li>
-							<li class="filter__option">
-								<div class="filter__name">Buying Format</div>
-								<label class="radio">
-									<input id="buyitnow" class="radio__input" type="radio" name="format" value="now">
-									<span class="radio__text">Buy it now</span>
-								</label>
-								<label class="radio">
-									<input id="auction" class="radio__input" type="radio" name="format" value="auction">
-									<span class="radio__text">Auction</span>
-								</label>
-							</li>
-						</ul>
-					</div>
-				</aside>
-				<section class="result">
-					<div class="result__sort">
-						<select class="sort">
-							<option value="low_price">Price: lower first</option>
-							<option value="high_price">Price: highest first</option>
-						</select>
-					</div>
-					<div class="result__container">
-					</div>
-				</section> -->
 			</div>
 		</main>
 		<footer>
