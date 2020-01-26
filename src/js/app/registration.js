@@ -26,7 +26,6 @@ class Registration{
 			submit: document.forms.registration.elements.submit,
 			warning: document.getElementsByClassName('registration__warning')[0]
 		}
-		console.dir(this.nodes);
 	}
 
 	addEvents() {

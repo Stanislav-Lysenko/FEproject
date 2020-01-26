@@ -12,7 +12,6 @@ class Signin{
 		this.findNodes();
 		this.bindAll();
 		this.addEvents();
-
 	}
 
 	findNodes(){
@@ -59,7 +58,6 @@ class Signin{
 			this.createWarningMessage('unknownuser');
 		} else {
 			this.successLogin(user);
-			//console.dir(this.storage.getLoginedUserFromLocalStorage());
 			location.assign('/');
 		}
 	}

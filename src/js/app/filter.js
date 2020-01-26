@@ -37,7 +37,6 @@ class Filter {
 				searchBtn: document.getElementById('search-input'),
 			}
 		}
-
 	}
 
 	bindAll() {
@@ -189,9 +188,7 @@ class Filter {
 
 	sort(e) {
 		let indexSelected = this.nodes.sort.selectedIndex;
-		console.log(indexSelected);
 		this.params[this.nodes.sort.getAttribute('name')] = this.nodes.sort.getElementsByTagName('option')[indexSelected].value;
-		console.dir(this.params);
 	}
 
 	checkFormat(e) {

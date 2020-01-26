@@ -124,7 +124,6 @@ class Manager {
 					this.params[keyValue[0]] = keyValue[1];
 				})
 			}
-			//console.dir(this.params);
 		}
 	}
 
@@ -182,7 +181,6 @@ class Manager {
 				break;
 				case '/':
 				await this.renderMainPage();
-				// this.renderResult(this.storage.getTempStorage('items'));
 				this.renderResult(this.storage.getItemsByAvailable())
 				this.filter = new Filter({option: 'all'})
 				break;

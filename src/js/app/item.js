@@ -83,8 +83,6 @@ class Item {
 							this.storage.tempItems[i].bids = +this.storage.tempItems[i].bids + 1;
 						}
 					}
-					console.dir(	this.storage.tempUsers);
-					console.dir(	this.storage.tempItems);
 					this.storage.updateAllLocalStorage();
 					this.changeTextBtn();
 					this.changeInfoAboutItem();
@@ -119,5 +117,4 @@ class Item {
 			this.changeTextBtn();
 		}
 	}
-
 }

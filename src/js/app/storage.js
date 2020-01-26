@@ -80,7 +80,6 @@ class Storage {
 
 	getFilteredItems(params){
 		this.filterParams = params;
-		console.dir(this.filterParams);
 		let filterArrItems = this.getItemsByAvailable();
 		filterArrItems = this.getItemsByCondition(filterArrItems);
 		filterArrItems = this.getItemsByShipping(filterArrItems);
@@ -168,7 +167,6 @@ class Storage {
 		if (this.filterParams['shipping']){
 			let arrParams = this.makeArray(this.filterParams['shipping']);
 			arrParams = this.replaceShippingParams(arrParams);
-			console.log(arrParams);
 				if (arrParams.length == 3) {
 					return arr.filter(item => {return item.shipping == arrParams[0] || item.shipping == arrParams[1] || item.shipping == arrParams[2]});
 				}
@@ -215,26 +213,21 @@ class Storage {
 
 	addNewItemToTempStorage(data){
 		this.tempItems.push(data);
-		console.dir(this.tempItems);
 		this.saveToLocalStorage('items', this.tempItems);
 	}
 	addNewUsertoTempStorage(data){
 		this.tempUsers.push(data);
-		console.dir(this.tempUsers);
 		this.saveToLocalStorage('users', this.tempUsers);
 	}
 
 	getBoughtItemsByUser(){
 		let loginedUser = this.getLoginedUserFromTempStorage();
 		for (let i = 0; i< loginedUser.buyitems.length; i++){
-			console.log(loginedUser.buyitems[i]);
 			this.tempBoughtItems.push(this.getItemById(loginedUser.buyitems[i].item))
 		}
-		console.dir(this.tempBoughtItems);
 		return this.tempBoughtItems;
 	}
 	generateNewId(){
-		console.dir(this.tempItems[9]);
 		return +this.tempItems[this.tempItems.length-1]['id_item'] + 1 + '';
 	}
 }
