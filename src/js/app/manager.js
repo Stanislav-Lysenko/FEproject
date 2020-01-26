@@ -135,6 +135,7 @@ class Manager {
 		if (this.currentPathName.match(this.regExpId)){
 			this.renderItemPage(this.storage.getItemById(this.getItemIdfromPath()));
 			this.item = new Item(this.storage.getItemById(this.getItemIdfromPath()));
+			new Gallery();
 			return;
 		} //render by user filter and request
 		if (this.currentPathName.match(this.regSearch)){

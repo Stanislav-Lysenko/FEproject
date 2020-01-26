@@ -12,4 +12,5 @@
 //= app/item.js
 //= app/sell.js
 //= app/slider.js
+//= app/gellary.js
 

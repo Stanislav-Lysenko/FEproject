@@ -14,7 +14,7 @@
 	<template id="gallery-item">
 		<li class="item-page__img-container">
 			<a class="item-page__img-link" href="{{=link}}">
-				<img class="item-page__pre-img" src="{{=link}}">
+				<img class="item-page__pre-img" src="{{=link}}" alt="pic">
 			</a>
 		</li>
 	</template>
@@ -23,7 +23,7 @@
 		<div class="item">
 			<div class="item__container">
 				<div class="item__img-container">
-					<a class="item__img-link" href="/item{{=id_item}}" alt="item"><img class="item__img-preview" src="{{=previmg_path}}"></a>
+					<a class="item__img-link" href="/item{{=id_item}}" alt="item"><img class="item__img-preview" src="{{=previmg_path}}"  alt="pic"></a>
 				</div>
 				<div class="item__info">
 					<h3 class="item__title"><a class="item__link" href="/item{{=id_item}}">{{=title}}</a></h3>
@@ -50,7 +50,7 @@
 				<div class="item-page__gallery">
 					<div class="item-page__gallery-container">
 						<div class="item-page__main-img-container">
-							<img class="item-page__main-img" src="{{=previmg_path}}">
+							<img class="item-page__main-img" src="{{=previmg_path}}" alt="pic">
 						</div>
 						<ul class="item-page__list-images">
 						</ul>
@@ -94,7 +94,7 @@
 				<div class="item-page__gallery">
 					<div class="item-page__gallery-container">
 						<div class="item-page__main-img-container">
-							<img class="item-page__main-img" src="{{=previmg_path}}">
+							<img class="item-page__main-img" src="{{=previmg_path}}" alt="pic">
 						</div>
 						<ul class="item-page__list-images">
 						</ul>
